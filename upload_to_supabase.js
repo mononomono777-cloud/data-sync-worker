@@ -66,6 +66,7 @@ async function upsertActHistory(data) {
                 character_name: char.characterName,
                 lp: char.lp ?? -1,
                 mr: char.mr ?? 0,
+                mr_ranking: char.mrRanking ?? null,
                 league_rank: char.leagueRank ?? 39,
                 fetched_at: fetchedAt
             });
@@ -83,6 +84,7 @@ async function upsertActHistory(data) {
                     character_name: char.characterName,
                     lp: char.lp ?? -1,
                     mr: char.mr ?? 0,
+                    mr_ranking: char.mrRanking ?? null,
                     league_rank: char.leagueRank ?? 39,
                     fetched_at: fetchedAt
                 });

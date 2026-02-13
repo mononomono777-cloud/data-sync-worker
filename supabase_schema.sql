@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS act_history (
   character_name  TEXT NOT NULL,
   lp              INTEGER DEFAULT -1,
   mr              INTEGER DEFAULT 0,
+  mr_ranking      INTEGER DEFAULT NULL,      -- 世界ランキング (master_rating_ranking)
   league_rank     INTEGER DEFAULT 39,
   fetched_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
   UNIQUE (short_id, act_id, character_name)

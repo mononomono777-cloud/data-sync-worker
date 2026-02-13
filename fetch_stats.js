@@ -489,6 +489,7 @@ async function isLoggedIn(page) {
                 characterName: c.character_name,
                 lp: c.league_info?.league_point,
                 mr: c.league_info?.master_rating,
+                mrRanking: c.league_info?.master_rating_ranking || null,
                 leagueRank: c.league_info?.league_rank
             }));
 
@@ -539,6 +540,7 @@ async function isLoggedIn(page) {
                             characterName: c.character_name,
                             lp: c.league_info?.league_point,
                             mr: c.league_info?.master_rating,
+                            mrRanking: c.league_info?.master_rating_ranking || null,
                             leagueRank: c.league_info?.league_rank
                         }));
                         result.pastActs[actId] = chars;
