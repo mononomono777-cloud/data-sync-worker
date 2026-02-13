@@ -1,0 +1,19 @@
+{
+  "name": "sf6_bucklerscraper",
+  "version": "1.0.0",
+  "description": "Street Fighter 6 の [Buckler](https://www.streetfighter.com/6/buckler/) から、プレイヤーの LP/MR データを自動取得するスクレイピングツール。",
+  "main": "fetch_stats.js",
+  "scripts": {
+    "scrape": "node fetch_stats.js",
+    "upload": "node upload_to_supabase.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "playwright": "^1.58.2"
+  }
+}

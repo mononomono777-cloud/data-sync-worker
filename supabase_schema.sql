@@ -1,0 +1,69 @@
+-- =============================================================
+-- SF6 Buckler Scraper — Supabase テーブル定義
+-- =============================================================
+
+-- 1. プレイヤーマスタ
+CREATE TABLE IF NOT EXISTS players (
+  short_id    TEXT PRIMARY KEY,
+  fighter_name TEXT NOT NULL DEFAULT 'Unknown',
+  favorite_character TEXT,
+  updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- 2. Act 履歴 (現在Act + 過去Act)
+CREATE TABLE IF NOT EXISTS act_history (
+  id              BIGSERIAL PRIMARY KEY,
+  short_id        TEXT NOT NULL REFERENCES players(short_id) ON DELETE CASCADE,
+  act_id          INTEGER NOT NULL,          -- 0~11, -1 = current
+  is_current      BOOLEAN NOT NULL DEFAULT false,
+  character_name  TEXT NOT NULL,
+  lp              INTEGER DEFAULT -1,
+  mr              INTEGER DEFAULT 0,
+  league_rank     INTEGER DEFAULT 39,
+  fetched_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (short_id, act_id, character_name)
+);
+
+CREATE INDEX IF NOT EXISTS idx_act_history_sid ON act_history(short_id);
+CREATE INDEX IF NOT EXISTS idx_act_history_act ON act_history(short_id, act_id);
+
+-- 3. バトルログ
+CREATE TABLE IF NOT EXISTS battle_log (
+  id            BIGSERIAL PRIMARY KEY,
+  short_id      TEXT NOT NULL REFERENCES players(short_id) ON DELETE CASCADE,
+  replay_id     TEXT NOT NULL UNIQUE,
+  battle_date   TIMESTAMPTZ NOT NULL,
+  p1_name       TEXT,
+  p1_id         TEXT,
+  p1_character  TEXT,
+  p1_type       TEXT,
+  p1_mr         INTEGER DEFAULT 0,
+  p1_score      INTEGER DEFAULT 0,
+  p2_name       TEXT,
+  p2_id         TEXT,
+  p2_character  TEXT,
+  p2_type       TEXT,
+  p2_mr         INTEGER DEFAULT 0,
+  p2_score      INTEGER DEFAULT 0,
+  winner        INTEGER DEFAULT 0,
+  fetched_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_battle_log_sid ON battle_log(short_id);
+CREATE INDEX IF NOT EXISTS idx_battle_log_date ON battle_log(battle_date DESC);
+
+-- 4. バトル統計 (日次スナップショット)
+CREATE TABLE IF NOT EXISTS battle_stats (
+  id          BIGSERIAL PRIMARY KEY,
+  short_id    TEXT NOT NULL REFERENCES players(short_id) ON DELETE CASCADE,
+  category    TEXT NOT NULL,   -- 'battle_trends', 'drive_gauge', 'sa_gauge'
+  label       TEXT NOT NULL,
+  value       TEXT,
+  fetched_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (short_id, category, label, fetched_at)
+);
+
+CREATE INDEX IF NOT EXISTS idx_battle_stats_sid ON battle_stats(short_id);
+
+-- RLS (Row Level Security) はデフォルトOFFのまま
+-- SERVICE_ROLE_KEY を使用するため、RLSは不要

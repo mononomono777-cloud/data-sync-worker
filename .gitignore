@@ -1,0 +1,7 @@
+node_modules/
+data/*.json
+error_screenshot.png
+debug_*.png
+error_*.png
+storageState.json
+.env

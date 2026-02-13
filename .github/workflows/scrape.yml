@@ -1,0 +1,85 @@
+name: SF6 Buckler Scraper
+
+on:
+  schedule:
+    - cron: '0 15 * * *'  # 日本時間 0:00 (UTC 15:00)
+  workflow_dispatch:  # 手動実行用
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npx playwright install chromium --with-deps
+
+      - name: Restore session state
+        env:
+          STORAGE_STATE_BASE64: ${{ secrets.STORAGE_STATE_BASE64 }}
+        run: |
+          if [ -n "$STORAGE_STATE_BASE64" ]; then
+            echo "$STORAGE_STATE_BASE64" | base64 -d > storageState.json
+            echo "Session state restored."
+          else
+            echo "No saved session state found. Will perform fresh login."
+          fi
+
+      - name: Run Scraper
+        env:
+          CAPCOM_ID: ${{ secrets.CAPCOM_ID }}
+          CAPCOM_PASSWORD: ${{ secrets.CAPCOM_PASSWORD }}
+        run: |
+          mkdir -p data
+          node fetch_stats.js
+
+      - name: Upload to Supabase
+        if: success()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          if [ -n "$SUPABASE_URL" ] && [ -n "$SUPABASE_KEY" ]; then
+            node upload_to_supabase.js
+            echo "Supabase upload complete."
+          else
+            echo "Supabase credentials not configured. Skipping upload."
+          fi
+
+      - name: Output updated session state
+        if: success()
+        run: |
+          if [ -f storageState.json ]; then
+            echo "::group::Updated storageState (Base64)"
+            echo "以下をGitHub Secrets の STORAGE_STATE_BASE64 に保存してください:"
+            base64 -w 0 storageState.json
+            echo ""
+            echo "::endgroup::"
+          fi
+
+      - name: Save debug screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-screenshots
+          path: |
+            error_screenshot.png
+            error_*.png
+            debug_*.png
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update SF6 Stats: $(date +'%Y-%m-%d')" && git push)
