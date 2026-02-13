@@ -2,6 +2,23 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
+// ========== Supabase (差分スクレイプ用) ==========
+let supabase = null;
+const FORCE_FULL = process.argv.includes('--force-full');
+try {
+    if (process.env.SUPABASE_URL && process.env.SUPABASE_KEY && !FORCE_FULL) {
+        const { createClient } = require('@supabase/supabase-js');
+        supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+        console.log('[差分モード] Supabase接続あり — 既存データとの差分のみ取得します。');
+    } else if (FORCE_FULL) {
+        console.log('[全件モード] --force-full が指定されています。全データを取得します。');
+    } else {
+        console.log('[全件モード] Supabase未設定 — 全データを取得します。');
+    }
+} catch (e) {
+    console.log('[全件モード] Supabaseモジュール読み込み失敗 — 全データを取得します。');
+}
+
 // ========== 設定 ==========
 const TARGET_SIDS = ["2310599217"]; // 複数のShort IDを指定可能
 const ACT_RANGE = Array.from({ length: 12 }, (_, i) => i); // Act 0 ~ 11
@@ -16,6 +33,54 @@ function sleep(ms) {
 
 function hasStorageState() {
     return fs.existsSync(STORAGE_STATE_PATH);
+}
+
+// ========== Supabase 差分チェック用 ==========
+
+/**
+ * Supabase から既存の act_id 一覧を取得（is_current = false のもの）
+ * @returns {Set<number>} 取得済みの act_id のセット
+ */
+async function getExistingActIds(shortId) {
+    if (!supabase) return new Set();
+    try {
+        const { data, error } = await supabase
+            .from('act_history')
+            .select('act_id')
+            .eq('short_id', shortId)
+            .eq('is_current', false);
+        if (error) {
+            console.warn(`  [WARN] act_history 取得エラー: ${error.message}`);
+            return new Set();
+        }
+        const ids = new Set(data.map(r => r.act_id));
+        return ids;
+    } catch (e) {
+        console.warn(`  [WARN] act_history 取得例外: ${e.message}`);
+        return new Set();
+    }
+}
+
+/**
+ * Supabase から既存の replay_id 一覧を取得
+ * @returns {Set<string>} 取得済みの replay_id のセット
+ */
+async function getExistingReplayIds(shortId) {
+    if (!supabase) return new Set();
+    try {
+        const { data, error } = await supabase
+            .from('battle_log')
+            .select('replay_id')
+            .eq('short_id', shortId);
+        if (error) {
+            console.warn(`  [WARN] battle_log 取得エラー: ${error.message}`);
+            return new Set();
+        }
+        return new Set(data.map(r => r.replay_id));
+    } catch (e) {
+        console.warn(`  [WARN] battle_log 取得例外: ${e.message}`);
+        return new Set();
+    }
 }
 
 // ========== バトルログ関連ヘルパー ==========
@@ -398,9 +463,23 @@ async function isLoggedIn(page) {
                 console.log(`  バトル統計: ${result.battleStats.battle_trends.length} 項目`);
             }
 
+            // 差分チェック: 既存データの取得
+            const existingActIds = await getExistingActIds(sid);
+            const existingReplayIds = await getExistingReplayIds(sid);
+            if (supabase) {
+                console.log(`  [差分] 取得済みAct: ${existingActIds.size}件, 取得済みバトル: ${existingReplayIds.size}件`);
+            }
+
             // 過去Actデータの取得 (新パラメータ形式 leagueinfo API)
             const numericSid = parseInt(sid, 10);
+            let actSkipped = 0;
             for (const actId of ACT_RANGE) {
+                // 差分チェック: 取得済みActはスキップ
+                if (existingActIds.has(actId)) {
+                    actSkipped++;
+                    console.log(`  Act ${actId}... SKIP (取得済み)`);
+                    continue;
+                }
                 process.stdout.write(`  Act ${actId}...`);
                 try {
                     const actData = await page.evaluate(async ({ numSid, actId }) => {
@@ -433,10 +512,14 @@ async function isLoggedIn(page) {
                 }
                 await sleep(1500);
             }
+            if (actSkipped > 0) {
+                console.log(`  → ${actSkipped}件のActをスキップしました`);
+            }
 
-            // バトルログの取得 (最大10ページ = 100戦)
+            // バトルログの取得 (最大10ページ = 100戦, 差分対応)
             console.log(`\n  バトルログ取得中...`);
             const allBattles = [];
+            let reachedKnown = false;
             for (let pg = 1; pg <= 10; pg++) {
                 process.stdout.write(`  page ${pg}...`);
                 try {
@@ -462,8 +545,29 @@ async function isLoggedIn(page) {
                         break;
                     }
 
-                    allBattles.push(...pageBattles);
-                    console.log(` ${pageBattles.length}件 (計${allBattles.length})`);
+                    // 差分チェック: 既知のreplay_idに3件連続到達したら打ち切り
+                    let consecutiveKnown = 0;
+                    let newInPage = 0;
+                    for (const b of pageBattles) {
+                        if (existingReplayIds.has(b.replayId)) {
+                            consecutiveKnown++;
+                            if (consecutiveKnown >= 3) {
+                                reachedKnown = true;
+                                break;
+                            }
+                        } else {
+                            consecutiveKnown = 0;
+                            allBattles.push(b);
+                            newInPage++;
+                        }
+                    }
+
+                    if (reachedKnown) {
+                        console.log(` ${newInPage}件新規 → 既知データ到達 (計${allBattles.length})`);
+                        break;
+                    }
+
+                    console.log(` ${newInPage}件新規 (計${allBattles.length})`);
 
                     if (allBattles.length >= 100) break;
                 } catch (err) {
@@ -473,7 +577,7 @@ async function isLoggedIn(page) {
                 await sleep(1500);
             }
             result.battleLog = allBattles;
-            console.log(`  バトルログ合計: ${allBattles.length}件`);
+            console.log(`  バトルログ合計: ${allBattles.length}件${reachedKnown ? ' (差分取得)' : ''}`);
 
             // JSON保存
             const outputPath = path.join(__dirname, 'data', `${sid}.json`);

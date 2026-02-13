@@ -47,6 +47,8 @@ jobs:
         env:
           CAPCOM_ID: ${{ secrets.CAPCOM_ID }}
           CAPCOM_PASSWORD: ${{ secrets.CAPCOM_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
           mkdir -p data
           node fetch_stats.js
