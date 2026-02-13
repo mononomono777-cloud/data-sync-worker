@@ -567,7 +567,7 @@ async function isLoggedIn(page) {
                 { key: 'rank', label: 'ランクマッチ' },
                 { key: 'casual', label: 'カジュアル' },
                 { key: 'custom', label: 'カスタム(ルーム)' },
-                { key: 'battlehub', label: 'バトルハブ' }
+                { key: 'hub', label: 'バトルハブ' }
             ];
             const allBattles = [];
 
