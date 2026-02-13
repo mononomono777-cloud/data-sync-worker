@@ -1,0 +1,4190 @@
+{
+  "shortId": "2310599217",
+  "fetchedAt": "2026-02-13T13:14:46.329Z",
+  "currentAct": [
+    {
+      "characterName": "リュウ",
+      "lp": 153967,
+      "mr": 1613,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "ルーク",
+      "lp": 188922,
+      "mr": 1596,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "キンバリー",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "春麗",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "マノン",
+      "lp": 79294,
+      "mr": 1604,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "ザンギエフ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "JP",
+      "lp": 49975,
+      "mr": 1553,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "ダルシム",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "キャミィ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ケン",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ディージェイ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "リリー",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "A.K.I.",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ラシード",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ブランカ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ジュリ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "マリーザ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ガイル",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "エド",
+      "lp": 168192,
+      "mr": 1640,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "エドモンド本田",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ジェイミー",
+      "lp": 122118,
+      "mr": 1625,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "豪鬼",
+      "lp": 161985,
+      "mr": 1659,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "サガット",
+      "lp": 81318,
+      "mr": 1726,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "ベガ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "テリー",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "舞",
+      "lp": 380908,
+      "mr": 1820,
+      "leagueRank": 36
+    },
+    {
+      "characterName": "エレナ",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "C.ヴァイパー",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    },
+    {
+      "characterName": "ランダム",
+      "lp": -1,
+      "mr": 0,
+      "leagueRank": 39
+    }
+  ],
+  "pastActs": {
+    "0": [
+      {
+        "characterName": "Ryu",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Luke",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Manon",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Zangief",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "JP",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Cammy",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Ken",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Lily",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Rashid",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Blanka",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Juri",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Marisa",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Guile",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Ed",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Jamie",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Akuma",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Terry",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Mai",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      }
+    ],
+    "1": [
+      {
+        "characterName": "Ryu",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Luke",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Manon",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Zangief",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "JP",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 4200,
+        "mr": 0,
+        "leagueRank": 14
+      },
+      {
+        "characterName": "Ken",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Lily",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Rashid",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Blanka",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Juri",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Marisa",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Guile",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Ed",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Jamie",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Akuma",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Terry",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Mai",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      }
+    ],
+    "2": [
+      {
+        "characterName": "Ryu",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Luke",
+        "lp": 20338,
+        "mr": 0,
+        "leagueRank": 32
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Manon",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 19000,
+        "mr": 0,
+        "leagueRank": 31
+      },
+      {
+        "characterName": "JP",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 27200,
+        "mr": 1470,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 22233,
+        "mr": 0,
+        "leagueRank": 33
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 16756,
+        "mr": 0,
+        "leagueRank": 29
+      },
+      {
+        "characterName": "Lily",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Rashid",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 19000,
+        "mr": 0,
+        "leagueRank": 31
+      },
+      {
+        "characterName": "Juri",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 24017,
+        "mr": 0,
+        "leagueRank": 35
+      },
+      {
+        "characterName": "Guile",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Ed",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 20200,
+        "mr": 0,
+        "leagueRank": 32
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 19685,
+        "mr": 0,
+        "leagueRank": 31
+      },
+      {
+        "characterName": "Akuma",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Terry",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Mai",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      }
+    ],
+    "3": [
+      {
+        "characterName": "Ryu",
+        "lp": 25176,
+        "mr": 1506,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 25550,
+        "mr": 1474,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Manon",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 19613,
+        "mr": 0,
+        "leagueRank": 31
+      },
+      {
+        "characterName": "JP",
+        "lp": 15557,
+        "mr": 0,
+        "leagueRank": 28
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 30477,
+        "mr": 1508,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 22040,
+        "mr": 0,
+        "leagueRank": 33
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 28413,
+        "mr": 1560,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Rashid",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Blanka",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Juri",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 25838,
+        "mr": 1478,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Ed",
+        "lp": 20341,
+        "mr": 0,
+        "leagueRank": 32
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 25054,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Terry",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Mai",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      }
+    ],
+    "4": [
+      {
+        "characterName": "Ryu",
+        "lp": 63869,
+        "mr": 1600,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 35451,
+        "mr": 1565,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Manon",
+        "lp": 25032,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 25843,
+        "mr": 1480,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "JP",
+        "lp": 17195,
+        "mr": 0,
+        "leagueRank": 29
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 30707,
+        "mr": 1466,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 25046,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 31849,
+        "mr": 1487,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": 25006,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Rashid",
+        "lp": 25084,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 20408,
+        "mr": 0,
+        "leagueRank": 32
+      },
+      {
+        "characterName": "Juri",
+        "lp": 28480,
+        "mr": 1530,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 26354,
+        "mr": 1524,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": 23800,
+        "mr": 0,
+        "leagueRank": 35
+      },
+      {
+        "characterName": "Ed",
+        "lp": 38306,
+        "mr": 1390,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 25047,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 26001,
+        "mr": 1490,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 51567,
+        "mr": 1501,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": 33701,
+        "mr": 1601,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Terry",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Mai",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": 25099,
+        "mr": 1500,
+        "leagueRank": 36
+      }
+    ],
+    "5": [
+      {
+        "characterName": "Ryu",
+        "lp": 84522,
+        "mr": 1616,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 60520,
+        "mr": 1702,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": 25005,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Manon",
+        "lp": 28339,
+        "mr": 1523,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 27691,
+        "mr": 1502,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "JP",
+        "lp": 25019,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 39805,
+        "mr": 1566,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 37977,
+        "mr": 1536,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 37429,
+        "mr": 1602,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": 25000,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": 25035,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Rashid",
+        "lp": 26907,
+        "mr": 1486,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 25168,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Juri",
+        "lp": 28440,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 28278,
+        "mr": 1511,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": 25009,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ed",
+        "lp": 71100,
+        "mr": 1662,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 45148,
+        "mr": 1701,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 27150,
+        "mr": 1519,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 55043,
+        "mr": 1537,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": 52147,
+        "mr": 1567,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Terry",
+        "lp": 25815,
+        "mr": 1457,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Mai",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": 31798,
+        "mr": 1503,
+        "leagueRank": 36
+      }
+    ],
+    "6": [
+      {
+        "characterName": "Ryu",
+        "lp": 97997,
+        "mr": 1669,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 90180,
+        "mr": 1760,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": 25675,
+        "mr": 1505,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": 26350,
+        "mr": 1485,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Manon",
+        "lp": 32069,
+        "mr": 1509,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 29251,
+        "mr": 1508,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "JP",
+        "lp": 25000,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": 19738,
+        "mr": 0,
+        "leagueRank": 31
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 48775,
+        "mr": 1602,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 47857,
+        "mr": 1645,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 43288,
+        "mr": 1544,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": 26470,
+        "mr": 1470,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": 30090,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Rashid",
+        "lp": 27837,
+        "mr": 1474,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 25778,
+        "mr": 1475,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Juri",
+        "lp": 32963,
+        "mr": 1536,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 33938,
+        "mr": 1606,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": 25000,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ed",
+        "lp": 122511,
+        "mr": 1725,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 53834,
+        "mr": 1602,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 64829,
+        "mr": 1583,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 79033,
+        "mr": 1609,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": 60396,
+        "mr": 1646,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Terry",
+        "lp": 52727,
+        "mr": 1530,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Mai",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": 35770,
+        "mr": 1538,
+        "leagueRank": 36
+      }
+    ],
+    "7": [
+      {
+        "characterName": "Ryu",
+        "lp": 106588,
+        "mr": 1709,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 104941,
+        "mr": 1707,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": 28575,
+        "mr": 1545,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": 26950,
+        "mr": 1523,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Manon",
+        "lp": 48467,
+        "mr": 1652,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 31111,
+        "mr": 1485,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "JP",
+        "lp": 27871,
+        "mr": 1491,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": 21782,
+        "mr": 0,
+        "leagueRank": 33
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 58855,
+        "mr": 1580,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 62157,
+        "mr": 1710,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 53580,
+        "mr": 1542,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": 27470,
+        "mr": 1510,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": 33900,
+        "mr": 1546,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Rashid",
+        "lp": 31726,
+        "mr": 1468,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 26038,
+        "mr": 1480,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Juri",
+        "lp": 45893,
+        "mr": 1706,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 37882,
+        "mr": 1615,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": 25000,
+        "mr": 1500,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ed",
+        "lp": 129966,
+        "mr": 1645,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 78181,
+        "mr": 1802,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 82316,
+        "mr": 1656,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 113702,
+        "mr": 1660,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": 73412,
+        "mr": 1724,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Terry",
+        "lp": 66037,
+        "mr": 1661,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Mai",
+        "lp": 86191,
+        "mr": 1903,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": 38460,
+        "mr": 1549,
+        "leagueRank": 36
+      }
+    ],
+    "8": [
+      {
+        "characterName": "Ryu",
+        "lp": 120867,
+        "mr": 1807,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 147335,
+        "mr": 1742,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": 35361,
+        "mr": 1564,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": 28339,
+        "mr": 1520,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Manon",
+        "lp": 63946,
+        "mr": 1712,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 40377,
+        "mr": 1535,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "JP",
+        "lp": 34367,
+        "mr": 1600,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": 25729,
+        "mr": 1499,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 68498,
+        "mr": 1617,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 71927,
+        "mr": 1701,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 69649,
+        "mr": 1717,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": 29160,
+        "mr": 1516,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": 44381,
+        "mr": 1538,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Rashid",
+        "lp": 48293,
+        "mr": 1668,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 26268,
+        "mr": 1488,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Juri",
+        "lp": 62212,
+        "mr": 1706,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 47086,
+        "mr": 1717,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": 25500,
+        "mr": 1502,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ed",
+        "lp": 140731,
+        "mr": 1702,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 92217,
+        "mr": 1816,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 97396,
+        "mr": 1767,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 129925,
+        "mr": 1703,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": 86944,
+        "mr": 1716,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Terry",
+        "lp": 77005,
+        "mr": 1708,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Mai",
+        "lp": 198009,
+        "mr": 2104,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Elena",
+        "lp": 25960,
+        "mr": 1527,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": 54463,
+        "mr": 1713,
+        "leagueRank": 36
+      }
+    ],
+    "9": [
+      {
+        "characterName": "Ryu",
+        "lp": 141475,
+        "mr": 1826,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 162234,
+        "mr": 1803,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": 41017,
+        "mr": 1611,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": 32389,
+        "mr": 1571,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Manon",
+        "lp": 69996,
+        "mr": 1637,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 42231,
+        "mr": 1502,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "JP",
+        "lp": 43702,
+        "mr": 1623,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": 26851,
+        "mr": 1495,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 74888,
+        "mr": 1615,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 85238,
+        "mr": 1759,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 78131,
+        "mr": 1743,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": 29897,
+        "mr": 1518,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": 48468,
+        "mr": 1552,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Rashid",
+        "lp": 55559,
+        "mr": 1608,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 26762,
+        "mr": 1503,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Juri",
+        "lp": 66912,
+        "mr": 1611,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 53030,
+        "mr": 1665,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": 25460,
+        "mr": 1501,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ed",
+        "lp": 154077,
+        "mr": 1800,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 97457,
+        "mr": 1730,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 105419,
+        "mr": 1704,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 141358,
+        "mr": 1727,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": 51747,
+        "mr": 1724,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": 98324,
+        "mr": 1742,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Terry",
+        "lp": 87782,
+        "mr": 1739,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Mai",
+        "lp": 314741,
+        "mr": 2013,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Elena",
+        "lp": 33181,
+        "mr": 1559,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": 28629,
+        "mr": 1608,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Random",
+        "lp": 67129,
+        "mr": 1726,
+        "leagueRank": 36
+      }
+    ],
+    "10": [
+      {
+        "characterName": "Ryu",
+        "lp": 152147,
+        "mr": 1805,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 186492,
+        "mr": 1803,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": 43567,
+        "mr": 1580,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": 33509,
+        "mr": 1553,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Manon",
+        "lp": 76764,
+        "mr": 1652,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": 47441,
+        "mr": 1568,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "JP",
+        "lp": 49415,
+        "mr": 1623,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": 28290,
+        "mr": 1504,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Cammy",
+        "lp": 92045,
+        "mr": 1764,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ken",
+        "lp": 95749,
+        "mr": 1700,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": 85511,
+        "mr": 1701,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Lily",
+        "lp": 31132,
+        "mr": 1517,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": 51777,
+        "mr": 1600,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Rashid",
+        "lp": 59489,
+        "mr": 1580,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Blanka",
+        "lp": 28912,
+        "mr": 1511,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Juri",
+        "lp": 75296,
+        "mr": 1702,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Marisa",
+        "lp": 63400,
+        "mr": 1710,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Guile",
+        "lp": 25439,
+        "mr": 1481,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Ed",
+        "lp": 165822,
+        "mr": 1817,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": 107512,
+        "mr": 1713,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 120429,
+        "mr": 1804,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 156848,
+        "mr": 1764,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": 73418,
+        "mr": 1818,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": 108333,
+        "mr": 1807,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Terry",
+        "lp": 98342,
+        "mr": 1752,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Mai",
+        "lp": 366772,
+        "mr": 2031,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Elena",
+        "lp": 39351,
+        "mr": 1602,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": 32569,
+        "mr": 1640,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Random",
+        "lp": 72369,
+        "mr": 1686,
+        "leagueRank": 36
+      }
+    ],
+    "11": [
+      {
+        "characterName": "Ryu",
+        "lp": 153967,
+        "mr": 1613,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Luke",
+        "lp": 188922,
+        "mr": 1596,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Kimberly",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Chun-Li",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Manon",
+        "lp": 79294,
+        "mr": 1604,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Zangief",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "JP",
+        "lp": 49975,
+        "mr": 1553,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Dhalsim",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Cammy",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Ken",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Dee Jay",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Lily",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "A.K.I.",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Rashid",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Blanka",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Juri",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Marisa",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Guile",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Ed",
+        "lp": 168192,
+        "mr": 1640,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Edmond Honda",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Jamie",
+        "lp": 122118,
+        "mr": 1625,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Akuma",
+        "lp": 161985,
+        "mr": 1659,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Sagat",
+        "lp": 81318,
+        "mr": 1726,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "M. Bison",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Terry",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Mai",
+        "lp": 380908,
+        "mr": 1820,
+        "leagueRank": 36
+      },
+      {
+        "characterName": "Elena",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "C. Viper",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      },
+      {
+        "characterName": "Random",
+        "lp": -1,
+        "mr": 0,
+        "leagueRank": 39
+      }
+    ]
+  },
+  "battleLog": [
+    {
+      "date": "2026-02-11T15:33:49.000Z",
+      "timestamp": 1770824029000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1650,
+      "p1Score": 2,
+      "p2Name": "Mayo",
+      "p2Id": "3317868935",
+      "p2Character": "ケン",
+      "p2Type": "Classic",
+      "p2Mr": 1680,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "5Q57PDUFC"
+    },
+    {
+      "date": "2026-02-11T15:32:30.000Z",
+      "timestamp": 1770823950000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1658,
+      "p1Score": 1,
+      "p2Name": "Mayo",
+      "p2Id": "3317868935",
+      "p2Character": "ケン",
+      "p2Type": "Classic",
+      "p2Mr": 1672,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "AFKNBBCHY"
+    },
+    {
+      "date": "2026-02-11T15:30:02.000Z",
+      "timestamp": 1770823802000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1649,
+      "p1Score": 2,
+      "p2Name": "Mayo",
+      "p2Id": "3317868935",
+      "p2Character": "ケン",
+      "p2Type": "Classic",
+      "p2Mr": 1681,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "G6SCPBSKX"
+    },
+    {
+      "date": "2026-02-11T15:27:53.000Z",
+      "timestamp": 1770823673000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1640,
+      "p1Score": 2,
+      "p2Name": "KaizinA",
+      "p2Id": "2394306662",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1670,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "WK38JY8C9"
+    },
+    {
+      "date": "2026-02-11T15:25:23.000Z",
+      "timestamp": 1770823523000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1648,
+      "p1Score": 1,
+      "p2Name": "KaizinA",
+      "p2Id": "2394306662",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1662,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "6K48VFGA8"
+    },
+    {
+      "date": "2026-02-11T15:22:57.000Z",
+      "timestamp": 1770823377000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1639,
+      "p1Score": 2,
+      "p2Name": "KaizinA",
+      "p2Id": "2394306662",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1671,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "QLH9MKQ4Q"
+    },
+    {
+      "date": "2026-02-11T15:19:10.000Z",
+      "timestamp": 1770823150000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1815,
+      "p1Score": 2,
+      "p2Name": "happy二号",
+      "p2Id": "2336659370",
+      "p2Character": "エドモンド本田",
+      "p2Type": "Classic",
+      "p2Mr": 1699,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "FFR4CGNBK"
+    },
+    {
+      "date": "2026-02-11T15:16:21.000Z",
+      "timestamp": 1770822981000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1808,
+      "p1Score": 2,
+      "p2Name": "HentaiFighter6",
+      "p2Id": "3504115276",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1781,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "4LJMKTNMN"
+    },
+    {
+      "date": "2026-02-11T15:14:52.000Z",
+      "timestamp": 1770822892000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1817,
+      "p1Score": 0,
+      "p2Name": "HentaiFighter6",
+      "p2Id": "3504115276",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1772,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "CBGXVF3AH"
+    },
+    {
+      "date": "2026-02-11T15:13:10.000Z",
+      "timestamp": 1770822790000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1810,
+      "p1Score": 2,
+      "p2Name": "HentaiFighter6",
+      "p2Id": "3504115276",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1779,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "TMD8BWR8B"
+    },
+    {
+      "date": "2026-02-10T09:34:24.000Z",
+      "timestamp": 1770716064000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "ジェイミー",
+      "p1Type": "Classic",
+      "p1Mr": 1617,
+      "p1Score": 2,
+      "p2Name": "Paripy",
+      "p2Id": "3914544302",
+      "p2Character": "ジェイミー",
+      "p2Type": "Classic",
+      "p2Mr": 1634,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "XAUYFXCHP"
+    },
+    {
+      "date": "2026-02-10T09:31:07.000Z",
+      "timestamp": 1770715867000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "ルーク",
+      "p1Type": "Classic",
+      "p1Mr": 1588,
+      "p1Score": 2,
+      "p2Name": "Tono1279",
+      "p2Id": "2100832111",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1609,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "8EYSJKMXL"
+    },
+    {
+      "date": "2026-02-10T09:29:48.000Z",
+      "timestamp": 1770715788000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "ルーク",
+      "p1Type": "Classic",
+      "p1Mr": 1579,
+      "p1Score": 2,
+      "p2Name": "Tono1279",
+      "p2Id": "2100832111",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1618,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "M5RUTTMNC"
+    },
+    {
+      "date": "2026-02-10T09:27:26.000Z",
+      "timestamp": 1770715646000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "ルーク",
+      "p1Type": "Classic",
+      "p1Mr": 1587,
+      "p1Score": 0,
+      "p2Name": "kaito",
+      "p2Id": "3734609353",
+      "p2Character": "ケン",
+      "p2Type": "Classic",
+      "p2Mr": 1582,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "6KT686DW4"
+    },
+    {
+      "date": "2026-02-10T09:26:16.000Z",
+      "timestamp": 1770715576000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "ルーク",
+      "p1Type": "Classic",
+      "p1Mr": 1596,
+      "p1Score": 1,
+      "p2Name": "kaito",
+      "p2Id": "3734609353",
+      "p2Character": "ケン",
+      "p2Type": "Classic",
+      "p2Mr": 1573,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "QTD967CEK"
+    },
+    {
+      "date": "2026-02-10T09:22:03.000Z",
+      "timestamp": 1770715323000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1648,
+      "p1Score": 0,
+      "p2Name": "Beams",
+      "p2Id": "2591957592",
+      "p2Character": "キンバリー",
+      "p2Type": "Modern",
+      "p2Mr": 1622,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "S3UD45NY4"
+    },
+    {
+      "date": "2026-02-10T09:20:00.000Z",
+      "timestamp": 1770715200000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1640,
+      "p1Score": 2,
+      "p2Name": "yomolion",
+      "p2Id": "1850691245",
+      "p2Character": "テリー",
+      "p2Type": "Classic",
+      "p2Mr": 1636,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "75DMFLHMT"
+    },
+    {
+      "date": "2026-02-10T09:18:29.000Z",
+      "timestamp": 1770715109000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1632,
+      "p1Score": 2,
+      "p2Name": "yomolion",
+      "p2Id": "1850691245",
+      "p2Character": "テリー",
+      "p2Type": "Classic",
+      "p2Mr": 1644,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "LPX4HBA4F"
+    },
+    {
+      "date": "2026-02-10T09:15:49.000Z",
+      "timestamp": 1770714949000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1640,
+      "p1Score": 0,
+      "p2Name": "spman",
+      "p2Id": "3801164853",
+      "p2Character": "C.ヴァイパー",
+      "p2Type": "Classic",
+      "p2Mr": 1640,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "NJW8SCYLV"
+    },
+    {
+      "date": "2026-02-10T09:13:37.000Z",
+      "timestamp": 1770714817000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1632,
+      "p1Score": 2,
+      "p2Name": "Saki",
+      "p2Id": "2393199008",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1635,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "PMAH94DFH"
+    },
+    {
+      "date": "2026-02-10T09:11:17.000Z",
+      "timestamp": 1770714677000,
+      "p1Name": "マネキヌコ",
+      "p1Id": "2577917373",
+      "p1Character": "マノン",
+      "p1Type": "Classic",
+      "p1Mr": 1660,
+      "p1Score": 0,
+      "p2Name": "Nisaka",
+      "p2Id": "2310599217",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1805,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "BHVGBD5VH"
+    },
+    {
+      "date": "2026-02-10T09:09:55.000Z",
+      "timestamp": 1770714595000,
+      "p1Name": "マネキヌコ",
+      "p1Id": "2577917373",
+      "p1Character": "マノン",
+      "p1Type": "Classic",
+      "p1Mr": 1665,
+      "p1Score": 0,
+      "p2Name": "Nisaka",
+      "p2Id": "2310599217",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1800,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "GGXB6TSHT"
+    },
+    {
+      "date": "2026-02-10T09:08:46.000Z",
+      "timestamp": 1770714526000,
+      "p1Name": "マネキヌコ",
+      "p1Id": "2577917373",
+      "p1Character": "マノン",
+      "p1Type": "Classic",
+      "p1Mr": 1654,
+      "p1Score": 2,
+      "p2Name": "Nisaka",
+      "p2Id": "2310599217",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1811,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "LEKFM4HGV"
+    },
+    {
+      "date": "2026-02-10T09:06:45.000Z",
+      "timestamp": 1770714405000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1722,
+      "p1Score": 2,
+      "p2Name": "FUKUSHIMA",
+      "p2Id": "2059889679",
+      "p2Character": "ベガ",
+      "p2Type": "Modern",
+      "p2Mr": 1557,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "PM7LAXE67"
+    },
+    {
+      "date": "2026-02-10T09:05:01.000Z",
+      "timestamp": 1770714301000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1717,
+      "p1Score": 2,
+      "p2Name": "FUKUSHIMA",
+      "p2Id": "2059889679",
+      "p2Character": "ベガ",
+      "p2Type": "Modern",
+      "p2Mr": 1562,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "3DPH59T63"
+    },
+    {
+      "date": "2026-02-10T09:01:38.000Z",
+      "timestamp": 1770714098000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1726,
+      "p1Score": 0,
+      "p2Name": "じぇいぴー",
+      "p2Id": "3743732348",
+      "p2Character": "JP",
+      "p2Type": "Classic",
+      "p2Mr": 1692,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "S4QBA4XBY"
+    },
+    {
+      "date": "2026-02-10T08:59:13.000Z",
+      "timestamp": 1770713953000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1735,
+      "p1Score": 0,
+      "p2Name": "じぇいぴー",
+      "p2Id": "3743732348",
+      "p2Character": "JP",
+      "p2Type": "Classic",
+      "p2Mr": 1683,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "P7VWK8Q5L"
+    },
+    {
+      "date": "2026-02-10T08:56:22.000Z",
+      "timestamp": 1770713782000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1802,
+      "p1Score": 2,
+      "p2Name": "グランドマスター鮭茶",
+      "p2Id": "2347421482",
+      "p2Character": "エドモンド本田",
+      "p2Type": "Classic",
+      "p2Mr": 1825,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "E8X9P9D58"
+    },
+    {
+      "date": "2026-02-10T08:54:57.000Z",
+      "timestamp": 1770713697000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1810,
+      "p1Score": 0,
+      "p2Name": "グランドマスター鮭茶",
+      "p2Id": "2347421482",
+      "p2Character": "エドモンド本田",
+      "p2Type": "Classic",
+      "p2Mr": 1817,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "4YGYC837B"
+    },
+    {
+      "date": "2026-02-10T08:52:28.000Z",
+      "timestamp": 1770713548000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1801,
+      "p1Score": 2,
+      "p2Name": "グランドマスター鮭茶",
+      "p2Id": "2347421482",
+      "p2Character": "エドモンド本田",
+      "p2Type": "Classic",
+      "p2Mr": 1826,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "FDV69G6Q9"
+    },
+    {
+      "date": "2026-02-10T08:49:41.000Z",
+      "timestamp": 1770713381000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1809,
+      "p1Score": 0,
+      "p2Name": "Dangodao",
+      "p2Id": "2049930874",
+      "p2Character": "ダルシム",
+      "p2Type": "Classic",
+      "p2Mr": 1789,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "QJDW5S9J5"
+    },
+    {
+      "date": "2026-02-10T08:47:40.000Z",
+      "timestamp": 1770713260000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1816,
+      "p1Score": 1,
+      "p2Name": "tobi",
+      "p2Id": "1070554570",
+      "p2Character": "ルーク",
+      "p2Type": "Classic",
+      "p2Mr": 1848,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "UFFN6K5PG"
+    },
+    {
+      "date": "2026-02-10T08:44:48.000Z",
+      "timestamp": 1770713088000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1807,
+      "p1Score": 2,
+      "p2Name": "tobi",
+      "p2Id": "1070554570",
+      "p2Character": "ルーク",
+      "p2Type": "Classic",
+      "p2Mr": 1857,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "CAXF7TMCV"
+    },
+    {
+      "date": "2026-02-10T08:43:18.000Z",
+      "timestamp": 1770712998000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1814,
+      "p1Score": 1,
+      "p2Name": "tobi",
+      "p2Id": "1070554570",
+      "p2Character": "ルーク",
+      "p2Type": "Classic",
+      "p2Mr": 1850,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "BWNJEQA9T"
+    },
+    {
+      "date": "2026-02-10T06:21:47.000Z",
+      "timestamp": 1770704507000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1806,
+      "p1Score": 2,
+      "p2Name": "masaraaaaaaaaaa",
+      "p2Id": "4087726281",
+      "p2Character": "春麗",
+      "p2Type": "Classic",
+      "p2Mr": 1787,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "E6UGCNW65"
+    },
+    {
+      "date": "2026-02-10T06:19:33.000Z",
+      "timestamp": 1770704373000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1728,
+      "p1Score": 2,
+      "p2Name": "yomolion",
+      "p2Id": "1850691245",
+      "p2Character": "テリー",
+      "p2Type": "Classic",
+      "p2Mr": 1666,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "YT6EHA79L"
+    },
+    {
+      "date": "2026-02-10T06:17:11.000Z",
+      "timestamp": 1770704231000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1721,
+      "p1Score": 2,
+      "p2Name": "yomolion",
+      "p2Id": "1850691245",
+      "p2Character": "テリー",
+      "p2Type": "Classic",
+      "p2Mr": 1673,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "EVJBMV4WP"
+    },
+    {
+      "date": "2026-02-10T06:15:08.000Z",
+      "timestamp": 1770704108000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1713,
+      "p1Score": 2,
+      "p2Name": "Caesar",
+      "p2Id": "3321405504",
+      "p2Character": "ベガ",
+      "p2Type": "Modern",
+      "p2Mr": 1722,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "WKSJQYDAE"
+    },
+    {
+      "date": "2026-02-10T06:13:48.000Z",
+      "timestamp": 1770704028000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1721,
+      "p1Score": 0,
+      "p2Name": "Caesar",
+      "p2Id": "3321405504",
+      "p2Character": "ベガ",
+      "p2Type": "Modern",
+      "p2Mr": 1714,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "SPKWVL584"
+    },
+    {
+      "date": "2026-02-10T06:12:34.000Z",
+      "timestamp": 1770703954000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1713,
+      "p1Score": 2,
+      "p2Name": "Caesar",
+      "p2Id": "3321405504",
+      "p2Character": "ベガ",
+      "p2Type": "Modern",
+      "p2Mr": 1722,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "A58KCN7TS"
+    },
+    {
+      "date": "2026-02-10T06:10:07.000Z",
+      "timestamp": 1770703807000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "サガット",
+      "p1Type": "Classic",
+      "p1Mr": 1705,
+      "p1Score": 2,
+      "p2Name": "Guts",
+      "p2Id": "1911299235",
+      "p2Character": "豪鬼",
+      "p2Type": "Classic",
+      "p2Mr": 1699,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "QG9THQA3J"
+    },
+    {
+      "date": "2026-02-10T06:08:11.000Z",
+      "timestamp": 1770703691000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1620,
+      "p1Score": 0,
+      "p2Name": "Seia",
+      "p2Id": "3678480026",
+      "p2Character": "キャミィ",
+      "p2Type": "Classic",
+      "p2Mr": 1656,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "JMXD87VVU"
+    },
+    {
+      "date": "2026-02-10T06:06:18.000Z",
+      "timestamp": 1770703578000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1627,
+      "p1Score": 1,
+      "p2Name": "Seia",
+      "p2Id": "3678480026",
+      "p2Character": "キャミィ",
+      "p2Type": "Classic",
+      "p2Mr": 1649,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "5ASY4E7AN"
+    },
+    {
+      "date": "2026-02-10T06:00:56.000Z",
+      "timestamp": 1770703256000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1627,
+      "p1Score": 2,
+      "p2Name": "茹茹大神",
+      "p2Id": "1206833398",
+      "p2Character": "テリー",
+      "p2Type": "Classic",
+      "p2Mr": 1486,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "P4HTWSL9F"
+    },
+    {
+      "date": "2026-02-10T05:58:23.000Z",
+      "timestamp": 1770703103000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1618,
+      "p1Score": 2,
+      "p2Name": "toppo",
+      "p2Id": "3788672734",
+      "p2Character": "キャミィ",
+      "p2Type": "Classic",
+      "p2Mr": 1643,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "MDUXQQBUV"
+    },
+    {
+      "date": "2026-02-10T05:56:09.000Z",
+      "timestamp": 1770702969000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1626,
+      "p1Score": 0,
+      "p2Name": "toppo",
+      "p2Id": "3788672734",
+      "p2Character": "キャミィ",
+      "p2Type": "Classic",
+      "p2Mr": 1635,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "LLSH8XDYB"
+    },
+    {
+      "date": "2026-02-10T05:54:43.000Z",
+      "timestamp": 1770702883000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1617,
+      "p1Score": 2,
+      "p2Name": "toppo",
+      "p2Id": "3788672734",
+      "p2Character": "キャミィ",
+      "p2Type": "Classic",
+      "p2Mr": 1644,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "83GAD9M6D"
+    },
+    {
+      "date": "2026-02-10T05:52:23.000Z",
+      "timestamp": 1770702743000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1624,
+      "p1Score": 1,
+      "p2Name": "西中の虎",
+      "p2Id": "1007788099",
+      "p2Character": "キャミィ",
+      "p2Type": "Modern",
+      "p2Mr": 1652,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "7DR3PAALP"
+    },
+    {
+      "date": "2026-02-10T05:48:45.000Z",
+      "timestamp": 1770702525000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1616,
+      "p1Score": 2,
+      "p2Name": "Chronos",
+      "p2Id": "1764577387",
+      "p2Character": "ディージェイ",
+      "p2Type": "Classic",
+      "p2Mr": 1608,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "PXGJQ4XTC"
+    },
+    {
+      "date": "2026-02-10T05:47:14.000Z",
+      "timestamp": 1770702434000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1625,
+      "p1Score": 0,
+      "p2Name": "Chronos",
+      "p2Id": "1764577387",
+      "p2Character": "ディージェイ",
+      "p2Type": "Classic",
+      "p2Mr": 1599,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "E4GEFLES9"
+    },
+    {
+      "date": "2026-02-10T05:45:49.000Z",
+      "timestamp": 1770702349000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1617,
+      "p1Score": 2,
+      "p2Name": "Chronos",
+      "p2Id": "1764577387",
+      "p2Character": "ディージェイ",
+      "p2Type": "Classic",
+      "p2Mr": 1607,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "RRJ7NXN78"
+    },
+    {
+      "date": "2026-02-10T05:43:38.000Z",
+      "timestamp": 1770702218000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1610,
+      "p1Score": 2,
+      "p2Name": "復活のF",
+      "p2Id": "3523830984",
+      "p2Character": "JP",
+      "p2Type": "Classic",
+      "p2Mr": 1579,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "L6VXYDRC9"
+    },
+    {
+      "date": "2026-02-10T05:40:57.000Z",
+      "timestamp": 1770702057000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1602,
+      "p1Score": 2,
+      "p2Name": "復活のF",
+      "p2Id": "3523830984",
+      "p2Character": "JP",
+      "p2Type": "Classic",
+      "p2Mr": 1587,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "LFCEHT8L7"
+    },
+    {
+      "date": "2026-02-10T05:37:40.000Z",
+      "timestamp": 1770701860000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1595,
+      "p1Score": 2,
+      "p2Name": "ゆあんぱん",
+      "p2Id": "3218241967",
+      "p2Character": "ケン",
+      "p2Type": "Classic",
+      "p2Mr": 1549,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "6JGKB3QN7"
+    },
+    {
+      "date": "2026-02-10T05:35:41.000Z",
+      "timestamp": 1770701741000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1588,
+      "p1Score": 2,
+      "p2Name": "ゆあんぱん",
+      "p2Id": "3218241967",
+      "p2Character": "ケン",
+      "p2Type": "Classic",
+      "p2Mr": 1556,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "7KV4FAGKX"
+    },
+    {
+      "date": "2026-02-10T05:32:14.000Z",
+      "timestamp": 1770701534000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1798,
+      "p1Score": 2,
+      "p2Name": "ドラキラ",
+      "p2Id": "1207439589",
+      "p2Character": "リュウ",
+      "p2Type": "Classic",
+      "p2Mr": 1791,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "YWDWPH9GA"
+    },
+    {
+      "date": "2026-02-10T05:30:11.000Z",
+      "timestamp": 1770701411000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1790,
+      "p1Score": 2,
+      "p2Name": "ドラキラ",
+      "p2Id": "1207439589",
+      "p2Character": "リュウ",
+      "p2Type": "Classic",
+      "p2Mr": 1799,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "KXKUHRJ6W"
+    },
+    {
+      "date": "2026-02-10T05:28:11.000Z",
+      "timestamp": 1770701291000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1798,
+      "p1Score": 0,
+      "p2Name": "ドラキラ",
+      "p2Id": "1207439589",
+      "p2Character": "リュウ",
+      "p2Type": "Classic",
+      "p2Mr": 1791,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "8J3NGRPJ4"
+    },
+    {
+      "date": "2026-02-10T05:26:12.000Z",
+      "timestamp": 1770701172000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1791,
+      "p1Score": 2,
+      "p2Name": "R7ou",
+      "p2Id": "4146251926",
+      "p2Character": "ルーク",
+      "p2Type": "Modern",
+      "p2Mr": 1769,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "64MB4GUAX"
+    },
+    {
+      "date": "2026-02-10T05:24:44.000Z",
+      "timestamp": 1770701084000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1783,
+      "p1Score": 2,
+      "p2Name": "R7ou",
+      "p2Id": "4146251926",
+      "p2Character": "ルーク",
+      "p2Type": "Modern",
+      "p2Mr": 1777,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "SRKD38C4D"
+    },
+    {
+      "date": "2026-02-10T05:23:12.000Z",
+      "timestamp": 1770700992000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1792,
+      "p1Score": 1,
+      "p2Name": "R7ou",
+      "p2Id": "4146251926",
+      "p2Character": "ルーク",
+      "p2Type": "Modern",
+      "p2Mr": 1768,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "SEQQDD4EG"
+    },
+    {
+      "date": "2026-02-10T05:20:22.000Z",
+      "timestamp": 1770700822000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1798,
+      "p1Score": 1,
+      "p2Name": "石川マノン",
+      "p2Id": "3411897513",
+      "p2Character": "マノン",
+      "p2Type": "Classic",
+      "p2Mr": 1875,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "WCQDFET5V"
+    },
+    {
+      "date": "2026-02-10T05:17:36.000Z",
+      "timestamp": 1770700656000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1793,
+      "p1Score": 2,
+      "p2Name": "abetyobisu",
+      "p2Id": "2809885729",
+      "p2Character": "キンバリー",
+      "p2Type": "Classic",
+      "p2Mr": 1662,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "H7CARQ89K"
+    },
+    {
+      "date": "2026-02-10T05:16:06.000Z",
+      "timestamp": 1770700566000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1788,
+      "p1Score": 2,
+      "p2Name": "abetyobisu",
+      "p2Id": "2809885729",
+      "p2Character": "キンバリー",
+      "p2Type": "Classic",
+      "p2Mr": 1667,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "H7D74BCH9"
+    },
+    {
+      "date": "2026-02-10T05:14:04.000Z",
+      "timestamp": 1770700444000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1797,
+      "p1Score": 1,
+      "p2Name": "orarin",
+      "p2Id": "4088416704",
+      "p2Character": "ベガ",
+      "p2Type": "Classic",
+      "p2Mr": 1752,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "UFJ4GJJG8"
+    },
+    {
+      "date": "2026-02-10T05:11:27.000Z",
+      "timestamp": 1770700287000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1806,
+      "p1Score": 1,
+      "p2Name": "orarin",
+      "p2Id": "4088416704",
+      "p2Character": "ベガ",
+      "p2Type": "Classic",
+      "p2Mr": 1743,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "HC6DLJ8SV"
+    },
+    {
+      "date": "2026-02-10T05:08:43.000Z",
+      "timestamp": 1770700123000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "舞",
+      "p1Type": "Classic",
+      "p1Mr": 1799,
+      "p1Score": 2,
+      "p2Name": "orarin",
+      "p2Id": "4088416704",
+      "p2Character": "ベガ",
+      "p2Type": "Classic",
+      "p2Mr": 1750,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "8LX8FLAXL"
+    },
+    {
+      "date": "2026-02-10T05:07:04.000Z",
+      "timestamp": 1770700024000,
+      "p1Name": "じるるー",
+      "p1Id": "3563106824",
+      "p1Character": "ベガ",
+      "p1Type": "Classic",
+      "p1Mr": 1675,
+      "p1Score": 2,
+      "p2Name": "Nisaka",
+      "p2Id": "2310599217",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1810,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "CNNME9WCV"
+    },
+    {
+      "date": "2026-02-10T05:04:21.000Z",
+      "timestamp": 1770699861000,
+      "p1Name": "じるるー",
+      "p1Id": "3563106824",
+      "p1Character": "ベガ",
+      "p1Type": "Classic",
+      "p1Mr": 1664,
+      "p1Score": 2,
+      "p2Name": "Nisaka",
+      "p2Id": "2310599217",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1821,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "TUHKJYA4F"
+    },
+    {
+      "date": "2026-02-09T09:31:00.000Z",
+      "timestamp": 1770629460000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1580,
+      "p1Score": 2,
+      "p2Name": "あっきー",
+      "p2Id": "3105662512",
+      "p2Character": "ジェイミー",
+      "p2Type": "Classic",
+      "p2Mr": 1563,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "YRPW7Q49S"
+    },
+    {
+      "date": "2026-02-09T09:28:59.000Z",
+      "timestamp": 1770629339000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1589,
+      "p1Score": 1,
+      "p2Name": "あっきー",
+      "p2Id": "3105662512",
+      "p2Character": "ジェイミー",
+      "p2Type": "Classic",
+      "p2Mr": 1554,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "YJX8STF3Y"
+    },
+    {
+      "date": "2026-02-09T09:26:36.000Z",
+      "timestamp": 1770629196000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1581,
+      "p1Score": 2,
+      "p2Name": "あっきー",
+      "p2Id": "3105662512",
+      "p2Character": "ジェイミー",
+      "p2Type": "Classic",
+      "p2Mr": 1562,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "35NKGPWX7"
+    },
+    {
+      "date": "2026-02-09T09:23:13.000Z",
+      "timestamp": 1770628993000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1574,
+      "p1Score": 2,
+      "p2Name": "今だけなんと中段40%増量中！",
+      "p2Id": "3014510622",
+      "p2Character": "JP",
+      "p2Type": "Modern",
+      "p2Mr": 1539,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "TYTDNW3FQ"
+    },
+    {
+      "date": "2026-02-09T09:20:34.000Z",
+      "timestamp": 1770628834000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1566,
+      "p1Score": 2,
+      "p2Name": "赤い彗星",
+      "p2Id": "1749202672",
+      "p2Character": "ザンギエフ",
+      "p2Type": "Modern",
+      "p2Mr": 1576,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "DDJSYKHKN"
+    },
+    {
+      "date": "2026-02-09T09:18:29.000Z",
+      "timestamp": 1770628709000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1573,
+      "p1Score": 0,
+      "p2Name": "고기장수PC",
+      "p2Id": "1143464321",
+      "p2Character": "豪鬼",
+      "p2Type": "Classic",
+      "p2Mr": 1616,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "3FDK445UP"
+    },
+    {
+      "date": "2026-02-09T09:17:08.000Z",
+      "timestamp": 1770628628000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1580,
+      "p1Score": 0,
+      "p2Name": "고기장수PC",
+      "p2Id": "1143464321",
+      "p2Character": "豪鬼",
+      "p2Type": "Classic",
+      "p2Mr": 1609,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "7SVEFGPM9"
+    },
+    {
+      "date": "2026-02-09T09:14:44.000Z",
+      "timestamp": 1770628484000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1588,
+      "p1Score": 0,
+      "p2Name": "shirokuma",
+      "p2Id": "3622240628",
+      "p2Character": "ラシード",
+      "p2Type": "Classic",
+      "p2Mr": 1574,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "U578XD5RK"
+    },
+    {
+      "date": "2026-02-09T09:12:40.000Z",
+      "timestamp": 1770628360000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1597,
+      "p1Score": 1,
+      "p2Name": "shirokuma",
+      "p2Id": "3622240628",
+      "p2Character": "ラシード",
+      "p2Type": "Classic",
+      "p2Mr": 1565,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "9MPA6VJ3T"
+    },
+    {
+      "date": "2026-02-09T09:10:35.000Z",
+      "timestamp": 1770628235000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1589,
+      "p1Score": 2,
+      "p2Name": "shirokuma",
+      "p2Id": "3622240628",
+      "p2Character": "ラシード",
+      "p2Type": "Classic",
+      "p2Mr": 1573,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "BR4HVM7NF"
+    },
+    {
+      "date": "2026-02-09T09:07:55.000Z",
+      "timestamp": 1770628075000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1597,
+      "p1Score": 0,
+      "p2Name": "HINSHI",
+      "p2Id": "1754468388",
+      "p2Character": "テリー",
+      "p2Type": "Classic",
+      "p2Mr": 1604,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "HQYD9UVGH"
+    },
+    {
+      "date": "2026-02-09T09:06:26.000Z",
+      "timestamp": 1770627986000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "豪鬼",
+      "p1Type": "Classic",
+      "p1Mr": 1605,
+      "p1Score": 0,
+      "p2Name": "HINSHI",
+      "p2Id": "1754468388",
+      "p2Character": "テリー",
+      "p2Type": "Classic",
+      "p2Mr": 1596,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "S4Q4VCUBE"
+    },
+    {
+      "date": "2026-02-08T23:34:20.000Z",
+      "timestamp": 1770593660000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "エド",
+      "p1Type": "Classic",
+      "p1Mr": 1632,
+      "p1Score": 2,
+      "p2Name": "YOBO1982",
+      "p2Id": "4258542273",
+      "p2Character": "エドモンド本田",
+      "p2Type": "Classic",
+      "p2Mr": 1637,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "MM9MJ48U3"
+    },
+    {
+      "date": "2026-02-08T23:32:31.000Z",
+      "timestamp": 1770593551000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "エド",
+      "p1Type": "Classic",
+      "p1Mr": 1623,
+      "p1Score": 2,
+      "p2Name": "YOBO1982",
+      "p2Id": "4258542273",
+      "p2Character": "エドモンド本田",
+      "p2Type": "Classic",
+      "p2Mr": 1646,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "RS937VJDJ"
+    },
+    {
+      "date": "2026-02-08T23:29:49.000Z",
+      "timestamp": 1770593389000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "エド",
+      "p1Type": "Classic",
+      "p1Mr": 1631,
+      "p1Score": 0,
+      "p2Name": "YOBO1982",
+      "p2Id": "4258542273",
+      "p2Character": "エドモンド本田",
+      "p2Type": "Classic",
+      "p2Mr": 1638,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "B9R7WPVPM"
+    },
+    {
+      "date": "2026-02-08T23:28:03.000Z",
+      "timestamp": 1770593283000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "エド",
+      "p1Type": "Classic",
+      "p1Mr": 1638,
+      "p1Score": 1,
+      "p2Name": "softrock",
+      "p2Id": "2725530054",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1677,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "WGPW7R65J"
+    },
+    {
+      "date": "2026-02-08T23:25:27.000Z",
+      "timestamp": 1770593127000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "エド",
+      "p1Type": "Classic",
+      "p1Mr": 1645,
+      "p1Score": 0,
+      "p2Name": "softrock",
+      "p2Id": "2725530054",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1670,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "4MLSB6FX6"
+    },
+    {
+      "date": "2026-02-08T23:24:12.000Z",
+      "timestamp": 1770593052000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "エド",
+      "p1Type": "Classic",
+      "p1Mr": 1636,
+      "p1Score": 2,
+      "p2Name": "softrock",
+      "p2Id": "2725530054",
+      "p2Character": "舞",
+      "p2Type": "Classic",
+      "p2Mr": 1679,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "ATMG87X3W"
+    },
+    {
+      "date": "2026-02-08T23:20:59.000Z",
+      "timestamp": 1770592859000,
+      "p1Name": "I’m lovin’ it",
+      "p1Id": "1811561221",
+      "p1Character": "A.K.I.",
+      "p1Type": "Classic",
+      "p1Mr": 1592,
+      "p1Score": 0,
+      "p2Name": "Nisaka",
+      "p2Id": "2310599217",
+      "p2Character": "エド",
+      "p2Type": "Classic",
+      "p2Mr": 1629,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "TTS3G6YUY"
+    },
+    {
+      "date": "2026-02-08T23:19:18.000Z",
+      "timestamp": 1770592758000,
+      "p1Name": "I’m lovin’ it",
+      "p1Id": "1811561221",
+      "p1Character": "A.K.I.",
+      "p1Type": "Classic",
+      "p1Mr": 1600,
+      "p1Score": 0,
+      "p2Name": "Nisaka",
+      "p2Id": "2310599217",
+      "p2Character": "エド",
+      "p2Type": "Classic",
+      "p2Mr": 1621,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "PSJCEJRTB"
+    },
+    {
+      "date": "2026-02-08T23:16:07.000Z",
+      "timestamp": 1770592567000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1634,
+      "p1Score": 1,
+      "p2Name": "az1283",
+      "p2Id": "3502069429",
+      "p2Character": "キンバリー",
+      "p2Type": "Classic",
+      "p2Mr": 1685,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "48UG4FX4X"
+    },
+    {
+      "date": "2026-02-08T23:14:01.000Z",
+      "timestamp": 1770592441000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1641,
+      "p1Score": 0,
+      "p2Name": "az1283",
+      "p2Id": "3502069429",
+      "p2Character": "キンバリー",
+      "p2Type": "Classic",
+      "p2Mr": 1678,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "N4PSXQATD"
+    },
+    {
+      "date": "2026-02-08T23:12:12.000Z",
+      "timestamp": 1770592332000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1633,
+      "p1Score": 2,
+      "p2Name": "ｱｲﾑﾚﾃﾞｨ",
+      "p2Id": "1957827883",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1632,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "EPL5X4VA6"
+    },
+    {
+      "date": "2026-02-08T23:09:13.000Z",
+      "timestamp": 1770592153000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1625,
+      "p1Score": 2,
+      "p2Name": "ｱｲﾑﾚﾃﾞｨ",
+      "p2Id": "1957827883",
+      "p2Character": "サガット",
+      "p2Type": "Classic",
+      "p2Mr": 1640,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "SRVU8Y9FM"
+    },
+    {
+      "date": "2026-02-08T23:07:14.000Z",
+      "timestamp": 1770592034000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1617,
+      "p1Score": 2,
+      "p2Name": "カイ猫さん",
+      "p2Id": "1589564673",
+      "p2Character": "リュウ",
+      "p2Type": "Classic",
+      "p2Mr": 1626,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "UE5H8GYJN"
+    },
+    {
+      "date": "2026-02-08T23:05:13.000Z",
+      "timestamp": 1770591913000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1625,
+      "p1Score": 0,
+      "p2Name": "カイ猫さん",
+      "p2Id": "1589564673",
+      "p2Character": "リュウ",
+      "p2Type": "Classic",
+      "p2Mr": 1618,
+      "p2Score": 2,
+      "winner": 2,
+      "replayId": "LYQQBD8WR"
+    },
+    {
+      "date": "2026-02-08T23:03:42.000Z",
+      "timestamp": 1770591822000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1617,
+      "p1Score": 2,
+      "p2Name": "カイ猫さん",
+      "p2Id": "1589564673",
+      "p2Character": "リュウ",
+      "p2Type": "Classic",
+      "p2Mr": 1626,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "84A5AK9B9"
+    },
+    {
+      "date": "2026-02-08T23:01:01.000Z",
+      "timestamp": 1770591661000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1610,
+      "p1Score": 2,
+      "p2Name": "どこまでもいけるまんTV",
+      "p2Id": "1439385245",
+      "p2Character": "ジュリ",
+      "p2Type": "Classic",
+      "p2Mr": 1573,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "EYVBC43Y8"
+    },
+    {
+      "date": "2026-02-08T22:59:09.000Z",
+      "timestamp": 1770591549000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "リュウ",
+      "p1Type": "Classic",
+      "p1Mr": 1602,
+      "p1Score": 2,
+      "p2Name": "どこまでもいけるまんTV",
+      "p2Id": "1439385245",
+      "p2Character": "ジュリ",
+      "p2Type": "Classic",
+      "p2Mr": 1581,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "54YYSS4TQ"
+    },
+    {
+      "date": "2026-02-08T22:56:39.000Z",
+      "timestamp": 1770591399000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "JP",
+      "p1Type": "Classic",
+      "p1Mr": 1546,
+      "p1Score": 2,
+      "p2Name": "zhixuan1",
+      "p2Id": "3456630405",
+      "p2Character": "ジュリ",
+      "p2Type": "Classic",
+      "p2Mr": 1522,
+      "p2Score": 0,
+      "winner": 1,
+      "replayId": "5KDA4NG3Q"
+    },
+    {
+      "date": "2026-02-08T22:54:22.000Z",
+      "timestamp": 1770591262000,
+      "p1Name": "Nisaka",
+      "p1Id": "2310599217",
+      "p1Character": "JP",
+      "p1Type": "Classic",
+      "p1Mr": 1538,
+      "p1Score": 2,
+      "p2Name": "zhixuan1",
+      "p2Id": "3456630405",
+      "p2Character": "ジュリ",
+      "p2Type": "Classic",
+      "p2Mr": 1530,
+      "p2Score": 1,
+      "winner": 1,
+      "replayId": "HNVVT8MT6"
+    }
+  ],
+  "battleStats": {
+    "battle_trends": [
+      {
+        "label": "投げ回数",
+        "value": 1.6
+      },
+      {
+        "label": "被投げ回数",
+        "value": 2.6
+      },
+      {
+        "label": "投げ抜け回数",
+        "value": 0.7
+      },
+      {
+        "label": "スタン回数",
+        "value": 0.1
+      },
+      {
+        "label": "被スタン回数",
+        "value": 0.1
+      },
+      {
+        "label": "ドライブインパクト",
+        "value": 0.2
+      },
+      {
+        "label": "被ドライブインパクト",
+        "value": 0.2
+      },
+      {
+        "label": "パニッシュカウンター",
+        "value": 0.1
+      },
+      {
+        "label": "被パニッシュカウンター",
+        "value": 0.1
+      },
+      {
+        "label": "ジャストパリィ",
+        "value": 0.8
+      },
+      {
+        "label": "画面端有利時間",
+        "value": "12.5s"
+      },
+      {
+        "label": "画面端不利時間",
+        "value": "8.9s"
+      }
+    ],
+    "drive_gauge": [
+      {
+        "label": "ドライブパリィ",
+        "value": "14.7%"
+      },
+      {
+        "label": "ドライブキャンセル",
+        "value": "13.6%"
+      },
+      {
+        "label": "ドライブインパクト",
+        "value": "1.4%"
+      },
+      {
+        "label": "ドライブリバーサル",
+        "value": "1.6%"
+      },
+      {
+        "label": "オーバードライブ",
+        "value": "25.1%"
+      },
+      {
+        "label": "ドライブラッシュ",
+        "value": "43.6%"
+      }
+    ],
+    "sa_gauge": [
+      {
+        "label": "SA Lv1",
+        "value": "34.0%"
+      },
+      {
+        "label": "SA Lv2",
+        "value": "36.2%"
+      },
+      {
+        "label": "SA Lv3 / CA",
+        "value": "29.8%"
+      }
+    ]
+  },
+  "fighterName": "Nisaka",
+  "favoriteCharacterName": "ルーク"
+}
