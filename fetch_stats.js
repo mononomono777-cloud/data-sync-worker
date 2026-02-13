@@ -61,9 +61,14 @@ const ACT_RANGE = Array.from({ length: 12 }, (_, i) => i); // Act 0 ~ 11
 const STORAGE_STATE_PATH = path.join(__dirname, 'storageState.json');
 const BUCKLER_BASE = 'https://www.streetfighter.com/6/buckler';
 
+// ========== スリープ設定 (ms) ==========
+const DELAY_PAGE_LOAD = 1000;  // ページ読み込み後の待機
+const DELAY_BETWEEN_REQ = 500;   // リクエスト間の待機
+const DELAY_RANDOM_MAX = 1000;  // ランダム追加 (0〜この値)
+
 // ========== ユーティリティ ==========
 function sleep(ms) {
-    const randomMs = ms + Math.random() * 1500;
+    const randomMs = ms + Math.random() * DELAY_RANDOM_MAX;
     return new Promise(resolve => setTimeout(resolve, randomMs));
 }
 
@@ -578,7 +583,7 @@ async function isLoggedIn(page) {
                             waitUntil: 'domcontentloaded',
                             timeout: 30000
                         });
-                        await sleep(2000);
+                        await sleep(DELAY_PAGE_LOAD);
 
                         const pageData = await page.evaluate(() => {
                             const script = document.getElementById('__NEXT_DATA__');
@@ -629,7 +634,7 @@ async function isLoggedIn(page) {
                         console.log(` ERR: ${err.message}`);
                         break;
                     }
-                    await sleep(1500);
+                    await sleep(DELAY_BETWEEN_REQ);
                 }
                 console.log(`  ${matchType.label}: ${typeBattles}件${reachedKnown ? ' (差分)' : ''}`);
             }
