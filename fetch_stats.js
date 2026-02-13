@@ -2,16 +2,18 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-// ========== Supabase (差分スクレイプ用) ==========
+// ========== Supabase ==========
 let supabase = null;
 const FORCE_FULL = process.argv.includes('--force-full');
 try {
-    if (process.env.SUPABASE_URL && process.env.SUPABASE_KEY && !FORCE_FULL) {
+    if (process.env.SUPABASE_URL && process.env.SUPABASE_KEY) {
         const { createClient } = require('@supabase/supabase-js');
         supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
-        console.log('[差分モード] Supabase接続あり — 既存データとの差分のみ取得します。');
-    } else if (FORCE_FULL) {
-        console.log('[全件モード] --force-full が指定されています。全データを取得します。');
+        if (FORCE_FULL) {
+            console.log('[全件モード] --force-full 指定。差分チェックをスキップします。');
+        } else {
+            console.log('[差分モード] Supabase接続あり — 既存データとの差分のみ取得します。');
+        }
     } else {
         console.log('[全件モード] Supabase未設定 — 全データを取得します。');
     }
@@ -19,12 +21,42 @@ try {
     console.log('[全件モード] Supabaseモジュール読み込み失敗 — 全データを取得します。');
 }
 
-// ========== 設定 ==========
-const TARGET_SIDS = (process.env.TARGET_SIDS || "").split(",").map(s => s.trim()).filter(Boolean);
-if (TARGET_SIDS.length === 0) {
-    console.error("環境変数 TARGET_SIDS を設定してください（カンマ区切り）");
-    process.exit(1);
+// ========== 対象SIDの取得 ==========
+/**
+ * Supabase の subscriptions テーブルからアクティブな Short ID 一覧を取得。
+ * Supabase 未接続時は環境変数 TARGET_SIDS にフォールバック。
+ */
+async function getTargetSids() {
+    // Supabase から動的取得
+    if (supabase) {
+        try {
+            const { data, error } = await supabase
+                .from('subscriptions')
+                .select('short_id')
+                .eq('is_active', true);
+            if (error) throw new Error(error.message);
+            const sids = [...new Set(data.map(r => r.short_id))]; // 重複排除
+            if (sids.length > 0) {
+                console.log(`[subscriptions] ${sids.length}件のアクティブなSIDを取得しました。`);
+                return sids;
+            }
+            console.warn('[subscriptions] アクティブなSIDがありません。環境変数にフォールバック。');
+        } catch (e) {
+            console.warn(`[subscriptions] 取得エラー: ${e.message}。環境変数にフォールバック。`);
+        }
+    }
+
+    // フォールバック: 環境変数
+    const envSids = (process.env.TARGET_SIDS || "").split(",").map(s => s.trim()).filter(Boolean);
+    if (envSids.length === 0) {
+        console.error("対象SIDが見つかりません。subscriptions テーブルまたは環境変数 TARGET_SIDS を設定してください。");
+        process.exit(1);
+    }
+    console.log(`[TARGET_SIDS] 環境変数から ${envSids.length}件のSIDを取得しました。`);
+    return envSids;
 }
+
+// ========== 設定 ==========
 const ACT_RANGE = Array.from({ length: 12 }, (_, i) => i); // Act 0 ~ 11
 const STORAGE_STATE_PATH = path.join(__dirname, 'storageState.json');
 const BUCKLER_BASE = 'https://www.streetfighter.com/6/buckler';
@@ -46,7 +78,7 @@ function hasStorageState() {
  * @returns {Set<number>} 取得済みの act_id のセット
  */
 async function getExistingActIds(shortId) {
-    if (!supabase) return new Set();
+    if (!supabase || FORCE_FULL) return new Set();
     try {
         const { data, error } = await supabase
             .from('act_history')
@@ -70,7 +102,7 @@ async function getExistingActIds(shortId) {
  * @returns {Set<string>} 取得済みの replay_id のセット
  */
 async function getExistingReplayIds(shortId) {
-    if (!supabase) return new Set();
+    if (!supabase || FORCE_FULL) return new Set();
     try {
         const { data, error } = await supabase
             .from('battle_log')
@@ -356,6 +388,9 @@ async function isLoggedIn(page) {
     const page = await context.newPage();
 
     try {
+        // 0. 対象SID一覧を取得
+        const TARGET_SIDS = await getTargetSids();
+
         // 1. プロフィールページにアクセスしてログイン状態を確認
         console.log("ログイン状態を確認中...");
         await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${TARGET_SIDS[0]}/play`, {

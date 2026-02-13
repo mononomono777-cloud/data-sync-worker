@@ -65,5 +65,26 @@ CREATE TABLE IF NOT EXISTS battle_stats (
 
 CREATE INDEX IF NOT EXISTS idx_battle_stats_sid ON battle_stats(short_id);
 
+-- 5. サブスクリプション (フロントエンドからの登録)
+CREATE TABLE IF NOT EXISTS subscriptions (
+  id          BIGSERIAL PRIMARY KEY,
+  device_id   TEXT UNIQUE NOT NULL,       -- デバイス固有ID (拡張ID / アプリID)
+  short_id    TEXT NOT NULL,              -- 追跡対象の Short ID
+  device_type TEXT DEFAULT 'unknown',     -- 'chrome' / 'web' / 'mobile'
+  is_active   BOOLEAN DEFAULT true,
+  last_seen   TIMESTAMPTZ DEFAULT now(),  -- アプリ最終アクセス日時
+  created_at  TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_subscriptions_active ON subscriptions(is_active) WHERE is_active = true;
+CREATE INDEX IF NOT EXISTS idx_subscriptions_sid ON subscriptions(short_id);
+
+-- テスト用初期データ
+INSERT INTO subscriptions (device_id, short_id, device_type) VALUES
+  ('test-device-001', '2310599217', 'manual'),
+  ('test-device-002', '4196667808', 'manual')
+ON CONFLICT (device_id) DO NOTHING;
+
 -- RLS (Row Level Security) はデフォルトOFFのまま
 -- SERVICE_ROLE_KEY を使用するため、RLSは不要
+-- フロントエンド用の anon key アクセスには RLS ポリシーを後で追加
