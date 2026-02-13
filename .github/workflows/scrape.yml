@@ -1,15 +1,15 @@
-name: SF6 Buckler Scraper
+name: Data Sync
 
 on:
   schedule:
-    - cron: '0 15 * * *'  # 日本時間 0:00 (UTC 15:00)
-  workflow_dispatch:  # 手動実行用
+    - cron: '0 15 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  scrape:
+  sync:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Cache Playwright browsers
+      - name: Cache dependencies
         uses: actions/cache@v4
         id: playwright-cache
         with:
@@ -40,20 +40,21 @@ jobs:
             echo "$STORAGE_STATE_BASE64" | base64 -d > storageState.json
             echo "Session state restored."
           else
-            echo "No saved session state found. Will perform fresh login."
+            echo "No saved session state found."
           fi
 
-      - name: Run Scraper
+      - name: Run sync
         env:
           CAPCOM_ID: ${{ secrets.CAPCOM_ID }}
           CAPCOM_PASSWORD: ${{ secrets.CAPCOM_PASSWORD }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          TARGET_SIDS: ${{ secrets.TARGET_SIDS }}
         run: |
           mkdir -p data
           node fetch_stats.js
 
-      - name: Upload to Supabase
+      - name: Upload data
         if: success()
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -61,37 +62,29 @@ jobs:
         run: |
           if [ -n "$SUPABASE_URL" ] && [ -n "$SUPABASE_KEY" ]; then
             node upload_to_supabase.js
-            echo "Supabase upload complete."
+            echo "Upload complete."
           else
-            echo "Supabase credentials not configured. Skipping upload."
+            echo "Storage credentials not configured. Skipping."
           fi
 
       - name: Output updated session state
         if: success()
         run: |
           if [ -f storageState.json ]; then
-            echo "::group::Updated storageState (Base64)"
-            echo "以下をGitHub Secrets の STORAGE_STATE_BASE64 に保存してください:"
+            echo "::group::Updated session (Base64)"
             base64 -w 0 storageState.json
             echo ""
             echo "::endgroup::"
           fi
 
-      - name: Save debug screenshots
+      - name: Save debug artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: debug-screenshots
+          name: debug-artifacts
           path: |
             error_screenshot.png
             error_*.png
             debug_*.png
           if-no-files-found: ignore
           retention-days: 7
-
-      - name: Commit and Push
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -f data/*.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update SF6 Stats: $(date +'%Y-%m-%d')" && git push)

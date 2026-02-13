@@ -20,7 +20,11 @@ try {
 }
 
 // ========== 設定 ==========
-const TARGET_SIDS = ["2310599217"]; // 複数のShort IDを指定可能
+const TARGET_SIDS = (process.env.TARGET_SIDS || "").split(",").map(s => s.trim()).filter(Boolean);
+if (TARGET_SIDS.length === 0) {
+    console.error("環境変数 TARGET_SIDS を設定してください（カンマ区切り）");
+    process.exit(1);
+}
 const ACT_RANGE = Array.from({ length: 12 }, (_, i) => i); // Act 0 ~ 11
 const STORAGE_STATE_PATH = path.join(__dirname, 'storageState.json');
 const BUCKLER_BASE = 'https://www.streetfighter.com/6/buckler';
