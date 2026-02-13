@@ -557,68 +557,85 @@ async function isLoggedIn(page) {
                 console.log(`  → ${actSkipped}件のActをスキップしました`);
             }
 
-            // バトルログの取得 (最大10ページ = 100戦, 差分対応)
-            console.log(`\n  バトルログ取得中...`);
+            // バトルログの取得 (4種マッチタイプ × 最大10ページ, 差分対応)
+            const MATCH_TYPES = [
+                { key: 'rank', label: 'ランクマッチ' },
+                { key: 'casual', label: 'カジュアル' },
+                { key: 'custom', label: 'カスタム(ルーム)' },
+                { key: 'battlehub', label: 'バトルハブ' }
+            ];
             const allBattles = [];
-            let reachedKnown = false;
-            for (let pg = 1; pg <= 10; pg++) {
-                process.stdout.write(`  page ${pg}...`);
-                try {
-                    await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/battlelog/rank?page=${pg}`, {
-                        waitUntil: 'domcontentloaded',
-                        timeout: 30000
-                    });
-                    await sleep(2000);
 
-                    const pageData = await page.evaluate(() => {
-                        const script = document.getElementById('__NEXT_DATA__');
-                        return script ? JSON.parse(script.innerText) : null;
-                    });
+            for (const matchType of MATCH_TYPES) {
+                console.log(`\n  ${matchType.label} 取得中...`);
+                let reachedKnown = false;
+                let typeBattles = 0;
 
-                    if (!pageData) {
-                        console.log(` no data`);
-                        break;
-                    }
+                for (let pg = 1; pg <= 10; pg++) {
+                    process.stdout.write(`  page ${pg}...`);
+                    try {
+                        await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/battlelog/${matchType.key}?page=${pg}`, {
+                            waitUntil: 'domcontentloaded',
+                            timeout: 30000
+                        });
+                        await sleep(2000);
 
-                    const pageBattles = parseBattleLogFromPage(pageData);
-                    if (pageBattles.length === 0) {
-                        console.log(` empty`);
-                        break;
-                    }
+                        const pageData = await page.evaluate(() => {
+                            const script = document.getElementById('__NEXT_DATA__');
+                            return script ? JSON.parse(script.innerText) : null;
+                        });
 
-                    // 差分チェック: 既知のreplay_idに3件連続到達したら打ち切り
-                    let consecutiveKnown = 0;
-                    let newInPage = 0;
-                    for (const b of pageBattles) {
-                        if (existingReplayIds.has(b.replayId)) {
-                            consecutiveKnown++;
-                            if (consecutiveKnown >= 3) {
-                                reachedKnown = true;
-                                break;
-                            }
-                        } else {
-                            consecutiveKnown = 0;
-                            allBattles.push(b);
-                            newInPage++;
+                        if (!pageData) {
+                            console.log(` no data`);
+                            break;
                         }
-                    }
 
-                    if (reachedKnown) {
-                        console.log(` ${newInPage}件新規 → 既知データ到達 (計${allBattles.length})`);
+                        const pageBattles = parseBattleLogFromPage(pageData);
+                        if (pageBattles.length === 0) {
+                            console.log(` empty`);
+                            break;
+                        }
+
+                        // 各バトルに matchType を付与
+                        pageBattles.forEach(b => b.matchType = matchType.key);
+
+                        // 差分チェック: 既知のreplay_idに3件連続到達したら打ち切り
+                        let consecutiveKnown = 0;
+                        let newInPage = 0;
+                        for (const b of pageBattles) {
+                            if (existingReplayIds.has(b.replayId)) {
+                                consecutiveKnown++;
+                                if (consecutiveKnown >= 3) {
+                                    reachedKnown = true;
+                                    break;
+                                }
+                            } else {
+                                consecutiveKnown = 0;
+                                allBattles.push(b);
+                                newInPage++;
+                                typeBattles++;
+                            }
+                        }
+
+                        if (reachedKnown) {
+                            console.log(` ${newInPage}件新規 → 既知データ到達`);
+                            break;
+                        }
+
+                        console.log(` ${newInPage}件新規 (計${typeBattles})`);
+
+                        if (typeBattles >= 100) break;
+                    } catch (err) {
+                        console.log(` ERR: ${err.message}`);
                         break;
                     }
-
-                    console.log(` ${newInPage}件新規 (計${allBattles.length})`);
-
-                    if (allBattles.length >= 100) break;
-                } catch (err) {
-                    console.log(` ERR: ${err.message}`);
-                    break;
+                    await sleep(1500);
                 }
-                await sleep(1500);
+                console.log(`  ${matchType.label}: ${typeBattles}件${reachedKnown ? ' (差分)' : ''}`);
             }
+
             result.battleLog = allBattles;
-            console.log(`  バトルログ合計: ${allBattles.length}件${reachedKnown ? ' (差分取得)' : ''}`);
+            console.log(`\n  バトルログ合計: ${allBattles.length}件`);
 
             // JSON保存
             const outputPath = path.join(__dirname, 'data', `${sid}.json`);

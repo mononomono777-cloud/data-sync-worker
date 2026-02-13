@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS battle_log (
   id            BIGSERIAL PRIMARY KEY,
   short_id      TEXT NOT NULL REFERENCES players(short_id) ON DELETE CASCADE,
   replay_id     TEXT NOT NULL UNIQUE,
+  match_type    TEXT DEFAULT 'rank',       -- 'rank' / 'casual' / 'custom' / 'battlehub'
   battle_date   TIMESTAMPTZ NOT NULL,
   p1_name       TEXT,
   p1_id         TEXT,

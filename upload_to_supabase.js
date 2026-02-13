@@ -118,6 +118,7 @@ async function upsertBattleLog(data) {
     const rows = data.battleLog.map(b => ({
         short_id: data.shortId,
         replay_id: b.replayId,
+        match_type: b.matchType || 'rank',
         battle_date: b.date,
         p1_name: b.p1Name,
         p1_id: b.p1Id,
