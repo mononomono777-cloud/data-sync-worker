@@ -43,16 +43,15 @@ jobs:
             echo "No saved session state found."
           fi
 
-      - name: Run sync
+      - name: Run Fetch Script
         env:
           CAPCOM_ID: ${{ secrets.CAPCOM_ID }}
           CAPCOM_PASSWORD: ${{ secrets.CAPCOM_PASSWORD }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-          TARGET_SIDS: ${{ secrets.TARGET_SIDS }}
         run: |
           mkdir -p data
-          node fetch_stats.js --force-full
+          node fetch_stats.js
 
       - name: Upload data
         if: success()
