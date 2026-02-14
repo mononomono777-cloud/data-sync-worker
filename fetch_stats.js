@@ -690,3 +690,119 @@ async function isLoggedIn(page) {
         console.log("\n完了。");
     }
 })();
+
+/**
+ * 指定されたバトルログから対戦相手を抽出し、MR履歴を取得して result.opponents に追加する
+ */
+async function fetchOpponentsForBattles(page, battles, mySid, opponentsMap, collectedIdsSet) {
+    console.log(`\n  → 対戦相手データの取得 (${battles.length}件のバトルから)...`);
+
+    const opponentMap = new Map(); // ShortID -> { name, lastDate }
+
+    // バトルログから対戦相手を抽出
+    battles.forEach(b => {
+        let oppId, oppName;
+        // p1_id、p2_idどちらかshort_idが取得中のIDじゃないほうが対戦相手
+        if (b.p1Id === mySid) {
+            oppId = b.p2Id;
+            oppName = b.p2Name;
+        } else {
+            oppId = b.p1Id;
+            oppName = b.p1Name;
+        }
+
+        // 既に取得済みならスキップ
+        if (collectedIdsSet.has(oppId)) return;
+
+        // 重複時は最新の名前/日付を優先
+        if (!opponentMap.has(oppId)) {
+            opponentMap.set(oppId, { name: oppName, lastSeen: b.timestamp });
+        } else {
+            const existing = opponentMap.get(oppId);
+            if (b.timestamp > existing.lastSeen) {
+                existing.name = oppName;
+                existing.lastSeen = b.timestamp;
+            }
+        }
+    });
+
+    const uniqueOpponents = Array.from(opponentMap.keys());
+    if (uniqueOpponents.length === 0) {
+        console.log(`    新規対戦相手なし`);
+        return;
+    }
+    console.log(`    新規対戦相手: ${uniqueOpponents.length}人`);
+
+    // 直近 acts の算出
+    const targetActs = ACT_RANGE.slice(-RECENT_ACTS_COUNT);
+
+    for (const oppId of uniqueOpponents) {
+        const oppInfo = opponentMap.get(oppId);
+        process.stdout.write(`    Opponent ${oppInfo.name} (${oppId}): Acts [${targetActs.join(',')}] ... `);
+
+        // 差分チェック: DBに取得済みActがあるか確認 (enemy_act_historyを参照)
+        const existingOppActIds = await getExistingEnemyActIds(oppId);
+
+        const oppData = {
+            shortId: oppId,
+            fighterName: oppInfo.name,
+            fetchedAt: new Date().toISOString(),
+            pastActs: {}
+        };
+
+        let fetchedCount = 0;
+        for (const actId of targetActs) {
+            if (existingOppActIds.has(actId)) {
+                continue;
+            }
+
+            // 取得処理 (page.evaluate再利用)
+            try {
+                const numSid = parseInt(oppId, 10);
+                if (isNaN(numSid)) continue;
+
+                const actRes = await page.evaluate(async ({ numSid, actId }) => {
+                    try {
+                        const r = await fetch('/6/buckler/api/profile/play/act/leagueinfo', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            credentials: 'include',
+                            body: JSON.stringify({ targetShortId: numSid, targetSeasonId: actId, targetModeId: 1, lang: 'ja-jp' })
+                        });
+                        return { status: r.status, body: await r.text() };
+                    } catch (e) { return null; }
+                }, { numSid, actId });
+
+                if (actRes) {
+                    let parsed;
+                    try { parsed = JSON.parse(actRes.body); } catch { parsed = null; }
+
+                    if (parsed?.response?.character_league_infos) {
+                        const chars = parsed.response.character_league_infos.filter(c => c.is_played).map(c => ({
+                            characterName: c.character_name,
+                            lp: c.league_info?.league_point,
+                            mr: c.league_info?.master_rating,
+                            mrRanking: c.league_info?.master_rating_ranking || null,
+                            leagueRank: c.league_info?.league_rank
+                        }));
+                        if (chars.length > 0) {
+                            oppData.pastActs[actId] = chars;
+                            fetchedCount++;
+                        }
+                    }
+                }
+            } catch (e) { }
+            await sleep(500); // 相手ごとのAct間ウェイト
+        }
+
+        if (fetchedCount > 0) {
+            opponentsMap[oppId] = oppData; // 結果に追加
+            collectedIdsSet.add(oppId); // 取得済みとしてマーク
+            console.log(`OK (${fetchedCount} acts)`);
+        } else {
+            console.log(`Skip or No Data`);
+        }
+
+        await sleep(1000); // 相手間ウェイト
+    }
+}
