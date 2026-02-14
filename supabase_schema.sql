@@ -90,3 +90,30 @@ ON CONFLICT (device_id) DO NOTHING;
 -- RLS (Row Level Security) はデフォルトOFFのまま
 -- SERVICE_ROLE_KEY を使用するため、RLSは不要
 -- フロントエンド用の anon key アクセスには RLS ポリシーを後で追加
+
+-- 6. 対戦相手マスタ (Subscribed ユーザーとは区別)
+CREATE TABLE IF NOT EXISTS enemy_players (
+  short_id    TEXT PRIMARY KEY,
+  fighter_name TEXT NOT NULL DEFAULT 'Unknown',
+  favorite_character TEXT,
+  updated_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- 7. 対戦相手 Act 履歴
+CREATE TABLE IF NOT EXISTS enemy_act_history (
+  id              BIGSERIAL PRIMARY KEY,
+  short_id        TEXT NOT NULL REFERENCES enemy_players(short_id) ON DELETE CASCADE,
+  act_id          INTEGER NOT NULL,          -- 0~11
+  is_current      BOOLEAN NOT NULL DEFAULT false, -- 基本的に false (過去ログ取得が主目的だが、構造は合わせる)
+  character_name  TEXT NOT NULL,
+  lp              INTEGER DEFAULT -1,
+  mr              INTEGER DEFAULT 0,
+  mr_ranking      INTEGER DEFAULT NULL,
+  league_rank     INTEGER DEFAULT 39,
+  fetched_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (short_id, act_id, character_name)
+);
+
+CREATE INDEX IF NOT EXISTS idx_enemy_act_history_sid ON enemy_act_history(short_id);
+CREATE INDEX IF NOT EXISTS idx_enemy_act_history_act ON enemy_act_history(short_id, act_id);
+

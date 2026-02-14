@@ -109,6 +109,57 @@ async function upsertActHistory(data) {
     console.log(`  ✓ act_history: ${rows.length} 件`);
 }
 
+async function upsertEnemyPlayer(data) {
+    const { error } = await supabase
+        .from('enemy_players')
+        .upsert({
+            short_id: data.shortId,
+            fighter_name: data.fighterName || 'Unknown',
+            favorite_character: data.favoriteCharacterName || null,
+            updated_at: data.fetchedAt
+        }, { onConflict: 'short_id' });
+
+    if (error) throw new Error(`enemy_players upsert failed: ${error.message}`);
+    // console.log(`  ✓ enemy_players: ${data.fighterName} (${data.shortId})`);
+}
+
+async function upsertEnemyActHistory(data) {
+    const rows = [];
+    const fetchedAt = data.fetchedAt;
+
+    // 過去Actのみ (構造はact_historyと同じ)
+    if (data.pastActs) {
+        for (const [actId, chars] of Object.entries(data.pastActs)) {
+            for (const char of chars) {
+                rows.push({
+                    short_id: data.shortId,
+                    act_id: parseInt(actId, 10),
+                    is_current: false,
+                    character_name: char.characterName,
+                    lp: char.lp ?? -1,
+                    mr: char.mr ?? 0,
+                    mr_ranking: char.mrRanking ?? null,
+                    league_rank: char.leagueRank ?? 39,
+                    fetched_at: fetchedAt
+                });
+            }
+        }
+    }
+
+    if (rows.length === 0) return;
+
+    // バッチ upsert (50件ずつ)
+    for (let i = 0; i < rows.length; i += 50) {
+        const batch = rows.slice(i, i + 50);
+        const { error } = await supabase
+            .from('enemy_act_history')
+            .upsert(batch, { onConflict: 'short_id,act_id,character_name' });
+
+        if (error) throw new Error(`enemy_act_history upsert failed: ${error.message}`);
+    }
+    console.log(`  ✓ enemy_act_history: ${rows.length} 件 (SID: ${data.shortId})`);
+}
+
 async function upsertBattleLog(data) {
     if (!data.battleLog || data.battleLog.length === 0) {
         console.log('  - battle_log: データなし');
@@ -224,6 +275,15 @@ async function upsertBattleStats(data) {
 
             await upsertPlayer(data);
             await upsertActHistory(data);
+
+            if (data.opponents) {
+                const oppIds = Object.keys(data.opponents);
+                for (const oppId of oppIds) {
+                    const oppData = data.opponents[oppId];
+                    await upsertEnemyPlayer(oppData);
+                    await upsertEnemyActHistory(oppData);
+                }
+            }
             await upsertBattleLog(data);
             await upsertBattleStats(data);
 

@@ -505,7 +505,12 @@ async function isLoggedIn(page) {
             console.log(`  Favorite: ${result.favoriteCharacterName}`);
             console.log(`  現Act: ${result.currentAct.length} キャラ`);
             if (result.battleStats.battle_trends.length > 0) {
-                console.log(`  バトル統計: ${result.battleStats.battle_trends.length} 項目`);
+                process.stdout.write(`  Opponent ${oppInfo.name} (${oppId}): Acts [${targetActs.join(',')}] ... `);
+
+                // 差分チェック: 取得済みActはスキップ (enemy_act_historyを参照)
+                const existingOppActIds = await getExistingEnemyActIds(oppId);
+
+                const oppData = {}; // This line was corrected based on the likely intent.
             }
 
             // 差分チェック: 既存データの取得
