@@ -58,6 +58,7 @@ async function getTargetSids() {
 
 // ========== 設定 ==========
 const ACT_RANGE = Array.from({ length: 12 }, (_, i) => i); // Act 0 ~ 11
+const RECENT_ACTS_COUNT = 3; // 直近3Act分を取得
 const STORAGE_STATE_PATH = path.join(__dirname, 'storageState.json');
 const BUCKLER_BASE = 'https://www.streetfighter.com/6/buckler';
 
