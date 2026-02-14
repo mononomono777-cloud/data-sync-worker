@@ -733,8 +733,8 @@ async function fetchOpponentsForBattles(page, battles, mySid, opponentsMap, coll
     }
     console.log(`    新規対戦相手: ${uniqueOpponents.length}人`);
 
-    // 直近 acts の算出
-    const targetActs = ACT_RANGE.slice(-RECENT_ACTS_COUNT);
+    // 直近 acts の算出 (最新Act=Act11 は除外して、その前の3つを取得)
+    const targetActs = ACT_RANGE.slice(0, -1).slice(-RECENT_ACTS_COUNT);
 
     for (const oppId of uniqueOpponents) {
         const oppInfo = opponentMap.get(oppId);
