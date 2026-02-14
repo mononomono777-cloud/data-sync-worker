@@ -52,7 +52,7 @@ jobs:
           TARGET_SIDS: ${{ secrets.TARGET_SIDS }}
         run: |
           mkdir -p data
-          node fetch_stats.js
+          node fetch_stats.js --force-full
 
       - name: Upload data
         if: success()
