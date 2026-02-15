@@ -229,7 +229,8 @@ function parseDetailedStats(playData) {
     stats.sa_gauge = [
         { label: 'SA Lv1', value: bs.gauge_rate_sa_lv1 != null ? (bs.gauge_rate_sa_lv1 * 100).toFixed(1) + '%' : null },
         { label: 'SA Lv2', value: bs.gauge_rate_sa_lv2 != null ? (bs.gauge_rate_sa_lv2 * 100).toFixed(1) + '%' : null },
-        { label: 'SA Lv3 / CA', value: ((bs.gauge_rate_sa_lv3 || 0) * 100 + (bs.gauge_rate_ca || 0) * 100).toFixed(1) + '%' }
+        { label: 'SA Lv3', value: bs.gauge_rate_sa_lv3 != null ? (bs.gauge_rate_sa_lv3 * 100).toFixed(1) + '%' : null },
+        { label: 'CA', value: bs.gauge_rate_ca != null ? (bs.gauge_rate_ca * 100).toFixed(1) + '%' : null }
     ];
 
     return stats;
