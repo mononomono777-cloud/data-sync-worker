@@ -212,6 +212,19 @@ async function upsertBattleStats(data) {
         return;
     }
 
+    // 今日のデータが既にあればスキップ（1日1回制限）
+    const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
+    const { data: existing } = await supabase
+        .from('battle_stats')
+        .select('id')
+        .eq('short_id', data.shortId)
+        .gte('fetched_at', today + 'T00:00:00Z')
+        .limit(1);
+    if (existing && existing.length > 0) {
+        console.log('  - battle_stats: 本日分は取得済み。スキップ。');
+        return;
+    }
+
     const rows = [];
     const fetchedAt = data.fetchedAt;
 

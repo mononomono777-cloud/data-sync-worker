@@ -1,9 +1,9 @@
-name: Weekly Cleanup
+name: Daily Cleanup
 
 on:
   schedule:
-    # 毎週日曜日の AM 3:00 (JST) = 土曜日の 18:00 (UTC)
-    - cron: '0 18 * * 6'
+    # 毎日 AM 3:00 (JST) = 前日 18:00 (UTC)
+    - cron: '0 18 * * *'
   workflow_dispatch: # 手動実行用
 
 jobs:
