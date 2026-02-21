@@ -5,6 +5,8 @@ const path = require('path');
 // ========== Supabase ==========
 let supabase = null;
 const FORCE_FULL = process.argv.includes('--force-full');
+const TARGET_INDEX = process.argv.indexOf('--target');
+const SINGLE_TARGET = TARGET_INDEX !== -1 ? process.argv[TARGET_INDEX + 1] : null;
 try {
     if (process.env.SUPABASE_URL && process.env.SUPABASE_KEY) {
         const { createClient } = require('@supabase/supabase-js');
@@ -27,6 +29,12 @@ try {
  * Supabase 未接続時は環境変数 TARGET_SIDS にフォールバック。
  */
 async function getTargetSids() {
+    // 単一ターゲット指定モード
+    if (SINGLE_TARGET) {
+        console.log(`[単一モード] 指定SID: ${SINGLE_TARGET}`);
+        return [SINGLE_TARGET];
+    }
+
     // Supabase から動的取得
     if (supabase) {
         try {
