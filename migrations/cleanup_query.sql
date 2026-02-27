@@ -4,7 +4,7 @@
   ================================================================
 
   保持ルール:
-    battle_log  : 直近プレイ3日分（AM9:00基準の論理日）
+    battle_log  : 直近プレイ3日分（AM9:00基準） or モード別直近100戦
     battle_stats: battle_log に残っている論理日のみ保持
     enemy_*     : battle_log に登場する対戦相手のみ保持
 
@@ -28,9 +28,12 @@ BEGIN
 
   -- ------------------------------------------------------------------
   -- 1. battle_log
-  --    保持条件: 直近プレイ3日分（AM9:00基準の論理日）
+  --    保持条件 (いずれかを満たせば残す):
+  --      A) 直近プレイ3日分（AM9:00基準の論理日）
+  --      B) モード別（match_type）直近100戦
   -- ------------------------------------------------------------------
-  WITH to_keep AS (
+  WITH keep_by_play_days AS (
+    -- A: 各ユーザーの直近3プレイ日に属するレコード
     SELECT bl.id
     FROM battle_log bl
     INNER JOIN (
@@ -48,6 +51,24 @@ BEGIN
     ) recent_days
       ON  bl.short_id = recent_days.short_id
       AND (bl.battle_date - INTERVAL '9 hours')::date = recent_days.play_date
+  ),
+  keep_by_count AS (
+    -- B: モード別（match_type）直近100戦
+    SELECT id
+    FROM (
+      SELECT id,
+             ROW_NUMBER() OVER (
+               PARTITION BY short_id, match_type
+               ORDER BY battle_date DESC
+             ) AS rn
+      FROM battle_log
+    ) sub
+    WHERE rn <= 100
+  ),
+  to_keep AS (
+    SELECT id FROM keep_by_play_days
+    UNION
+    SELECT id FROM keep_by_count
   )
   DELETE FROM battle_log
   WHERE id NOT IN (SELECT id FROM to_keep);
