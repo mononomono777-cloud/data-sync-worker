@@ -90,9 +90,9 @@ const STORAGE_STATE_PATH = path.join(__dirname, 'storageState.json');
 const BUCKLER_BASE = 'https://www.streetfighter.com/6/buckler';
 
 // ========== スリープ設定 (ms) ==========
-const DELAY_PAGE_LOAD = 1000;  // ページ読み込み後の待機
-const DELAY_BETWEEN_REQ = 500;   // リクエスト間の待機
-const DELAY_RANDOM_MAX = 1000;  // ランダム追加 (0〜この値)
+const DELAY_PAGE_LOAD = 300;   // ページ読み込み後の待機
+const DELAY_BETWEEN_REQ = 200;   // リクエスト間の待機
+const DELAY_RANDOM_MAX = 300;   // ランダム追加 (0〜この値)
 
 // ========== ユーティリティ ==========
 function sleep(ms) {
@@ -522,7 +522,7 @@ async function isLoggedIn(page) {
                 waitUntil: 'domcontentloaded',
                 timeout: 30000
             });
-            await sleep(3000);
+            await sleep(1500);
 
             const nextData = await page.evaluate(() => {
                 const script = document.getElementById('__NEXT_DATA__');
@@ -607,7 +607,7 @@ async function isLoggedIn(page) {
                 } catch (err) {
                     console.log(` ERR: ${err.message}`);
                 }
-                await sleep(1500);
+                await sleep(400);
             }
             if (actSkipped > 0) {
                 console.log(`  → ${actSkipped}件のActをスキップしました`);
@@ -634,27 +634,77 @@ async function isLoggedIn(page) {
                 for (let pg = 1; pg <= 10; pg++) {
                     process.stdout.write(`  page ${pg}...`);
                     try {
-                        await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/battlelog/${matchType.key}?page=${pg}`, {
-                            waitUntil: 'domcontentloaded',
-                            timeout: 30000
-                        });
-                        await sleep(DELAY_PAGE_LOAD);
+                        // Next.js _next/data JSONエンドポイントを使用してページ遷移なしでデータ取得
+                        const pageData = await page.evaluate(async ({ sid, matchKey, pg }) => {
+                            try {
+                                // まず_next/dataルートを試す
+                                const buildId = window.__NEXT_DATA__?.buildId;
+                                if (buildId) {
+                                    const url = `/6/buckler/_next/data/${buildId}/ja-jp/profile/${sid}/battlelog/${matchKey}.json?page=${pg}&sid=${sid}&matchType=${matchKey}`;
+                                    const r = await fetch(url, { credentials: 'include' });
+                                    if (r.ok) {
+                                        const json = await r.json();
+                                        return { source: 'nextdata', data: json };
+                                    }
+                                }
+                                return null;
+                            } catch (e) { return null; }
+                        }, { sid, matchKey: matchType.key, pg });
 
-                        const pageData = await page.evaluate(() => {
-                            const script = document.getElementById('__NEXT_DATA__');
-                            return script ? JSON.parse(script.innerText) : null;
-                        });
-
-                        if (!pageData) {
-                            console.log(` no data`);
-                            break;
+                        let replayList = null;
+                        if (pageData?.source === 'nextdata' && pageData.data?.pageProps?.replay_list) {
+                            replayList = pageData.data.pageProps.replay_list;
                         }
 
-                        const pageBattles = parseBattleLogFromPage(pageData);
-                        if (pageBattles.length === 0) {
+                        // フォールバック: _next/dataが失敗した場合は従来のpage.gotoを使用
+                        if (!replayList) {
+                            await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/battlelog/${matchType.key}?page=${pg}`, {
+                                waitUntil: 'domcontentloaded',
+                                timeout: 30000
+                            });
+                            await sleep(DELAY_PAGE_LOAD);
+                            const fallbackData = await page.evaluate(() => {
+                                const script = document.getElementById('__NEXT_DATA__');
+                                return script ? JSON.parse(script.innerText) : null;
+                            });
+                            replayList = fallbackData?.props?.pageProps?.replay_list;
+                        }
+
+                        if (!replayList || !Array.isArray(replayList) || replayList.length === 0) {
                             console.log(` empty`);
                             break;
                         }
+
+                        // replay_listから直接パース
+                        const pageBattles = [];
+                        replayList.forEach(match => {
+                            try {
+                                const p1 = match.player1_info;
+                                const p2 = match.player2_info;
+                                const p1Rounds = Array.isArray(p1.round_results) ? p1.round_results : [];
+                                const p2Rounds = Array.isArray(p2.round_results) ? p2.round_results : [];
+                                const p1Score = p1Rounds.filter(r => r > 0).length;
+                                const p2Score = p2Rounds.filter(r => r > 0).length;
+                                pageBattles.push({
+                                    date: new Date(match.uploaded_at * 1000).toISOString(),
+                                    timestamp: match.uploaded_at * 1000,
+                                    p1Name: p1.player.fighter_id,
+                                    p1Id: String(p1.player.short_id),
+                                    p1Character: p1.playing_character_name,
+                                    p1Type: formatControlType(p1.battle_input_type_name),
+                                    p1Mr: p1.master_rating || p1.league_point,
+                                    p1Score,
+                                    p2Name: p2.player.fighter_id,
+                                    p2Id: String(p2.player.short_id),
+                                    p2Character: p2.playing_character_name,
+                                    p2Type: formatControlType(p2.battle_input_type_name),
+                                    p2Mr: p2.master_rating || p2.league_point,
+                                    p2Score,
+                                    winner: p1Score > p2Score ? 1 : p1Score < p2Score ? 2 : 0,
+                                    replayId: match.replay_id || ''
+                                });
+                            } catch { }
+                        });
 
                         // 各バトルに matchType を付与
                         pageBattles.forEach(b => b.matchType = matchType.key);
@@ -764,11 +814,13 @@ async function fetchOpponentsForBattles(page, battles, mySid, opponentsMap, coll
     // 直近 acts の算出 (最新Act=Act11 は除外して、その前の3つを取得)
     const targetActs = ACT_RANGE.slice(0, -1).slice(-RECENT_ACTS_COUNT);
 
-    for (const oppId of uniqueOpponents) {
+    // 1人分のデータ取得関数
+    async function fetchSingleOpponent(oppId) {
         const oppInfo = opponentMap.get(oppId);
-        process.stdout.write(`    Opponent ${oppInfo.name} (${oppId}): Acts [${targetActs.join(',')}] ... `);
+        const numSid = parseInt(oppId, 10);
+        if (isNaN(numSid)) return { oppId, status: 'skip' };
 
-        // 差分チェック: DBに取得済みActがあるか確認 (enemy_act_historyを参照)
+        // 差分チェック: DBに取得済みActがあるか確認
         const existingOppActIds = await getExistingEnemyActIds(oppId);
 
         const oppData = {
@@ -779,58 +831,63 @@ async function fetchOpponentsForBattles(page, battles, mySid, opponentsMap, coll
         };
 
         let fetchedCount = 0;
-        for (const actId of targetActs) {
-            if (existingOppActIds.has(actId)) {
-                continue;
-            }
+        const actsToFetch = targetActs.filter(a => !existingOppActIds.has(a));
 
-            // 取得処理 (page.evaluate再利用)
-            try {
-                const numSid = parseInt(oppId, 10);
-                if (isNaN(numSid)) continue;
+        // 全Actを並列fetch
+        const actResults = await Promise.all(actsToFetch.map(actId =>
+            page.evaluate(async ({ numSid, actId }) => {
+                try {
+                    const r = await fetch('/6/buckler/api/profile/play/act/leagueinfo', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        credentials: 'include',
+                        body: JSON.stringify({ targetShortId: numSid, targetSeasonId: actId, targetModeId: 1, lang: 'ja-jp' })
+                    });
+                    return { actId, status: r.status, body: await r.text() };
+                } catch (e) { return { actId, status: 0, body: null }; }
+            }, { numSid, actId })
+        ));
 
-                const actRes = await page.evaluate(async ({ numSid, actId }) => {
-                    try {
-                        const r = await fetch('/6/buckler/api/profile/play/act/leagueinfo', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            credentials: 'include',
-                            body: JSON.stringify({ targetShortId: numSid, targetSeasonId: actId, targetModeId: 1, lang: 'ja-jp' })
-                        });
-                        return { status: r.status, body: await r.text() };
-                    } catch (e) { return null; }
-                }, { numSid, actId });
-
-                if (actRes) {
-                    let parsed;
-                    try { parsed = JSON.parse(actRes.body); } catch { parsed = null; }
-
-                    if (parsed?.response?.character_league_infos) {
-                        const chars = parsed.response.character_league_infos.filter(c => c.is_played).map(c => ({
-                            characterName: c.character_name,
-                            lp: c.league_info?.league_point,
-                            mr: c.league_info?.master_rating,
-                            mrRanking: c.league_info?.master_rating_ranking || null,
-                            leagueRank: c.league_info?.league_rank
-                        }));
-                        if (chars.length > 0) {
-                            oppData.pastActs[actId] = chars;
-                            fetchedCount++;
-                        }
-                    }
+        for (const actRes of actResults) {
+            if (!actRes?.body) continue;
+            let parsed;
+            try { parsed = JSON.parse(actRes.body); } catch { continue; }
+            if (parsed?.response?.character_league_infos) {
+                const chars = parsed.response.character_league_infos.filter(c => c.is_played).map(c => ({
+                    characterName: c.character_name,
+                    lp: c.league_info?.league_point,
+                    mr: c.league_info?.master_rating,
+                    mrRanking: c.league_info?.master_rating_ranking || null,
+                    leagueRank: c.league_info?.league_rank
+                }));
+                if (chars.length > 0) {
+                    oppData.pastActs[actRes.actId] = chars;
+                    fetchedCount++;
                 }
-            } catch (e) { }
-            await sleep(500); // 相手ごとのAct間ウェイト
+            }
         }
 
-        if (fetchedCount > 0) {
-            opponentsMap[oppId] = oppData; // 結果に追加
-            collectedIdsSet.add(oppId); // 取得済みとしてマーク
-            console.log(`OK (${fetchedCount} acts)`);
-        } else {
-            console.log(`Skip or No Data`);
+        return { oppId, oppData, fetchedCount, oppInfo };
+    }
+
+    // 5人ずつバッチ並列処理
+    const BATCH_SIZE = 5;
+    for (let i = 0; i < uniqueOpponents.length; i += BATCH_SIZE) {
+        const batch = uniqueOpponents.slice(i, i + BATCH_SIZE);
+        const results = await Promise.all(batch.map(fetchSingleOpponent));
+
+        for (const r of results) {
+            if (r.status === 'skip') continue;
+            const label = `    Opponent ${r.oppInfo.name} (${r.oppId}): Acts [${targetActs.join(',')}]`;
+            if (r.fetchedCount > 0) {
+                opponentsMap[r.oppId] = r.oppData;
+                collectedIdsSet.add(r.oppId);
+                console.log(`${label} ... OK (${r.fetchedCount} acts)`);
+            } else {
+                console.log(`${label} ... Skip or No Data`);
+            }
         }
 
-        await sleep(1000); // 相手間ウェイト
+        await sleep(200); // バッチ間の短いウェイト
     }
 }
