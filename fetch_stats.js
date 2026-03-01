@@ -441,7 +441,7 @@ async function isLoggedIn(page) {
         contextOptions.storageState = STORAGE_STATE_PATH;
     }
     const context = await browser.newContext(contextOptions);
-    const page = await context.newPage();
+    let page = await context.newPage();
 
     try {
         // 0. 対象SID一覧を取得
@@ -506,7 +506,17 @@ async function isLoggedIn(page) {
         }
 
         // 2. 各プレイヤーデータの取得
-        for (const sid of TARGET_SIDS) {
+        for (let sidIdx = 0; sidIdx < TARGET_SIDS.length; sidIdx++) {
+            const sid = TARGET_SIDS[sidIdx];
+
+            // 4SIDごとにページを再作成（ブラウザ内蓄積リソースをリセット）
+            if (sidIdx > 0 && sidIdx % 4 === 0) {
+                console.log(`\n[RESET] ページを再作成します (${sidIdx}/${TARGET_SIDS.length})...`);
+                await page.close();
+                page = await context.newPage();
+                await sleep(500);
+            }
+
             console.log(`========== SID: ${sid} ==========`);
             const result = {
                 shortId: sid,
@@ -767,6 +777,10 @@ async function isLoggedIn(page) {
             const outputPath = path.join(__dirname, 'data', `${sid}.json`);
             fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
             console.log(`\n保存完了: ${outputPath}`);
+
+            // SID間でページ状態をリセット
+            await page.goto('about:blank').catch(() => { });
+            await sleep(300);
         }
 
     } catch (err) {
@@ -880,7 +894,7 @@ async function fetchOpponentsForBattles(page, battles, mySid, opponentsMap, coll
     }
 
     // 5人ずつバッチ並列処理
-    const BATCH_SIZE = 5;
+    const BATCH_SIZE = 3;
     for (let i = 0; i < uniqueOpponents.length; i += BATCH_SIZE) {
         const batch = uniqueOpponents.slice(i, i + BATCH_SIZE);
         const results = await Promise.all(batch.map(fetchSingleOpponent));
