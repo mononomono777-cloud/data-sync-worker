@@ -517,17 +517,26 @@ async function isLoggedIn(page) {
                 battleStats: {}
             };
 
-            // 対象プレイヤーのPlayページに遷移
-            await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/play`, {
-                waitUntil: 'domcontentloaded',
-                timeout: 30000
-            });
-            await sleep(1500);
+            // 対象プレイヤーのPlayページに遷移（リトライ付き）
+            let nextData = null;
+            for (let attempt = 0; attempt < 3; attempt++) {
+                await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/play`, {
+                    waitUntil: 'load',
+                    timeout: 30000
+                });
+                await sleep(attempt === 0 ? 1500 : 3000); // リトライ時は長めに待つ
 
-            const nextData = await page.evaluate(() => {
-                const script = document.getElementById('__NEXT_DATA__');
-                return script ? JSON.parse(script.innerText) : null;
-            });
+                nextData = await page.evaluate(() => {
+                    const script = document.getElementById('__NEXT_DATA__');
+                    return script ? JSON.parse(script.innerText) : null;
+                });
+
+                if (nextData?.props?.pageProps?.play || nextData?.props?.pageProps?.fighter_banner_info) {
+                    break; // 有効なデータ取得成功
+                }
+                console.log(`  [RETRY ${attempt + 1}] __NEXT_DATA__ が不完全。再試行...`);
+                nextData = null;
+            }
 
             if (!nextData) {
                 console.error(`  __NEXT_DATA__ 取得失敗。スキップ。`);
