@@ -26,6 +26,7 @@ try {
 // ========== 対象SIDの取得 ==========
 /**
  * Supabase の subscriptions テーブルからアクティブな Short ID 一覧を取得。
+ * さらに admin_tracked_ids テーブルからも追跡対象のIDを取得し、マージする。
  * Supabase 未接続時は環境変数 TARGET_SIDS にフォールバック。
  */
 async function getTargetSids() {
@@ -38,17 +39,35 @@ async function getTargetSids() {
     // Supabase から動的取得
     if (supabase) {
         try {
-            const { data, error } = await supabase
+            // 1. subscriptions テーブルからアクティブなSID
+            const { data: subData, error: subError } = await supabase
                 .from('subscriptions')
                 .select('short_id')
                 .eq('is_active', true);
-            if (error) throw new Error(error.message);
-            const sids = [...new Set(data.map(r => r.short_id))]; // 重複排除
+            if (subError) throw new Error(subError.message);
+
+            // 2. admin_tracked_ids テーブルから追跡対象SID
+            let adminSids = [];
+            try {
+                const { data: adminData, error: adminError } = await supabase
+                    .from('admin_tracked_ids')
+                    .select('short_id');
+                if (!adminError && adminData) {
+                    adminSids = adminData.map(r => r.short_id);
+                    console.log(`[admin_tracked_ids] ${adminSids.length}件の追跡IDを取得。`);
+                }
+            } catch (e) {
+                console.warn(`[admin_tracked_ids] 取得スキップ: ${e.message}`);
+            }
+
+            // マージして重複排除
+            const allSids = [...(subData || []).map(r => r.short_id), ...adminSids];
+            const sids = [...new Set(allSids)];
             if (sids.length > 0) {
-                console.log(`[subscriptions] ${sids.length}件のアクティブなSIDを取得しました。`);
+                console.log(`[合計] ${sids.length}件のSIDを取得しました。(subscriptions: ${(subData || []).length}, admin: ${adminSids.length})`);
                 return sids;
             }
-            console.warn('[subscriptions] アクティブなSIDがありません。環境変数にフォールバック。');
+            console.warn('[subscriptions+admin] アクティブなSIDがありません。環境変数にフォールバック。');
         } catch (e) {
             console.warn(`[subscriptions] 取得エラー: ${e.message}。環境変数にフォールバック。`);
         }
