@@ -530,21 +530,34 @@ async function isLoggedIn(page) {
             // 対象プレイヤーのPlayページに遷移（リトライ付き）
             let nextData = null;
             for (let attempt = 0; attempt < 3; attempt++) {
-                await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/play`, {
-                    waitUntil: 'load',
-                    timeout: 30000
-                });
-                await sleep(attempt === 0 ? 1500 : 3000); // リトライ時は長めに待つ
+                try {
+                    await page.goto(`${BUCKLER_BASE}/ja-jp/profile/${sid}/play`, {
+                        waitUntil: 'load',
+                        timeout: 30000
+                    });
+                } catch (navErr) {
+                    console.log(`  [RETRY ${attempt + 1}] ページ遷移エラー: ${navErr.message}`);
+                    continue;
+                }
+                await sleep(attempt === 0 ? 1500 : 3000);
+
+                // ログインページにリダイレクトされた場合
+                const currentUrl = page.url();
+                if (currentUrl.includes('login') || currentUrl.includes('auth')) {
+                    console.log(`  [RETRY ${attempt + 1}] ログインページにリダイレクト。再試行...`);
+                    continue;
+                }
 
                 nextData = await page.evaluate(() => {
                     const script = document.getElementById('__NEXT_DATA__');
                     return script ? JSON.parse(script.innerText) : null;
                 });
 
-                if (nextData?.props?.pageProps?.play || nextData?.props?.pageProps?.fighter_banner_info) {
-                    break; // 有効なデータ取得成功
+                if (nextData?.props?.pageProps) {
+                    break; // pagePropsがあれば成功
                 }
-                console.log(`  [RETRY ${attempt + 1}] __NEXT_DATA__ が不完全。再試行...`);
+                const keys = nextData ? Object.keys(nextData.props?.pageProps || {}) : ['(no __NEXT_DATA__)'];
+                console.log(`  [RETRY ${attempt + 1}] __NEXT_DATA__ が不完全 (keys: ${keys.join(', ')})。再試行...`);
                 nextData = null;
             }
 
