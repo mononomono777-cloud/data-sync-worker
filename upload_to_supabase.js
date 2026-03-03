@@ -212,18 +212,26 @@ async function upsertBattleStats(data) {
         return;
     }
 
-    // 今日のデータが既にあればスキップ（1日1回制限）
+    // 今日のデータが全て揃っているかチェックし、欠損があればアップロードを続行する
+    // バトル傾向、ドライブゲージ、SAゲージの3カテゴリを想定
     const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
     const { data: existing } = await supabase
         .from('battle_stats')
-        .select('id')
+        .select('category')
         .eq('short_id', data.shortId)
-        .gte('fetched_at', today + 'T00:00:00Z')
-        .limit(1);
-    if (existing && existing.length > 0) {
+        .gte('fetched_at', today + 'T00:00:00Z');
+
+    const existingCategories = new Set((existing || []).map(r => r.category));
+
+    // 全て揃っている場合のみスキップ
+    if (existingCategories.has('battle_trends') &&
+        existingCategories.has('drive_gauge') &&
+        existingCategories.has('sa_gauge')) {
         console.log('  - battle_stats: 本日分は取得済み。スキップ。');
         return;
     }
+
+    console.log(`  - battle_stats: 不足カテゴリあり(既存: ${Array.from(existingCategories).join(',')})。アップロードを実行します。`);
 
     const rows = [];
     const fetchedAt = data.fetchedAt;

@@ -243,14 +243,12 @@ function parseDetailedStats(playData) {
 
     stats.drive_gauge = [
         { label: 'ドライブパリィ', value: bs.gauge_rate_drive_guard != null ? (bs.gauge_rate_drive_guard * 100).toFixed(1) + '%' : null },
-        { label: 'ドライブキャンセル', value: bs.gauge_rate_drive_arts != null ? (bs.gauge_rate_drive_arts * 100).toFixed(1) + '%' : null },
+        { label: 'オーバードライブアーツ', value: bs.gauge_rate_drive_arts != null ? (bs.gauge_rate_drive_arts * 100).toFixed(1) + '%' : null },
         { label: 'ドライブインパクト', value: bs.gauge_rate_drive_impact != null ? (bs.gauge_rate_drive_impact * 100).toFixed(1) + '%' : null },
         { label: 'ドライブリバーサル', value: bs.gauge_rate_drive_reversal != null ? (bs.gauge_rate_drive_reversal * 100).toFixed(1) + '%' : null },
-        { label: 'オーバードライブ', value: bs.gauge_rate_drive_other != null ? (bs.gauge_rate_drive_other * 100).toFixed(1) + '%' : null },
-        {
-            label: 'ドライブラッシュ', value: (bs.gauge_rate_drive_rush_from_cancel != null || bs.gauge_rate_drive_rush_from_parry != null) ?
-                (((bs.gauge_rate_drive_rush_from_cancel || 0) + (bs.gauge_rate_drive_rush_from_parry || 0)) * 100).toFixed(1) + '%' : null
-        }
+        { label: 'ダメージ', value: bs.gauge_rate_drive_other != null ? (bs.gauge_rate_drive_other * 100).toFixed(1) + '%' : null },
+        { label: 'パリィドライブラッシュ', value: bs.gauge_rate_drive_rush_from_parry != null ? (bs.gauge_rate_drive_rush_from_parry * 100).toFixed(1) + '%' : null },
+        { label: 'キャンセルドライブラッシュ', value: bs.gauge_rate_drive_rush_from_cancel != null ? (bs.gauge_rate_drive_rush_from_cancel * 100).toFixed(1) + '%' : null }
     ];
 
     stats.sa_gauge = [
