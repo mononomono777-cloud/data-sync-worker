@@ -1,6 +1,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 // ========== Supabase ==========
 let supabase = null;
@@ -84,7 +85,7 @@ async function getTargetSids() {
 }
 
 // ========== 設定 ==========
-const ACT_RANGE = Array.from({ length: 12 }, (_, i) => i); // Act 0 ~ 11
+const ACT_RANGE = Array.from({ length: 13 }, (_, i) => i); // Act 0 ~ 12
 const RECENT_ACTS_COUNT = 3; // 直近3Act分を取得
 const STORAGE_STATE_PATH = path.join(__dirname, 'storageState.json');
 const BUCKLER_BASE = 'https://www.streetfighter.com/6/buckler';
@@ -345,6 +346,10 @@ async function performLogin(page, context) {
         console.log("Step 4: ログインフォームに入力...");
         await dismissCookieBanner(page);
 
+        const bodyHtml = await page.evaluate(() => document.body.innerHTML);
+        require('fs').writeFileSync('debug_dom.html', bodyHtml);
+        console.log("[DEBUG] Saved debug_dom.html");
+
         // メール/ID入力欄を探す
         const emailSelectors = ['input[name="email"]', 'input[name="loginid"]', 'input[type="email"]', '#email'];
         let emailFilled = false;
@@ -365,26 +370,51 @@ async function performLogin(page, context) {
             throw new Error("メール入力欄が見つかりません。error_no_email_field.pngを確認してください。");
         }
 
-        // パスワード入力
-        const passSelectors = ['input[name="password"]', 'input[type="password"]', '#password'];
-        for (const sel of passSelectors) {
+        // ここでパスワード入力欄が最初から存在するかチェック (CAPCOM ID はメールとパスワードが分かれていることがある)
+        let passInput = await page.$('input[name="password"]') || await page.$('input[type="password"]') || await page.$('#password');
+
+        if (!passInput) {
+            console.log("[DEBUG] パスワード入力欄がまだ表示されていません。「次へ」を試行します...");
+            const nextBtnSelectors = ['button[type="submit"]', 'input[type="submit"]', 'button[name="action"]'];
+            for (const sel of nextBtnSelectors) {
+                try {
+                    const btn = await page.$(sel);
+                    if (btn) {
+                        await btn.click();
+                        console.log(`[DEBUG] メール送信ボタン(${sel})をクリックしました。`);
+                        break;
+                    }
+                } catch (e) { continue; }
+            }
+            // パスワード入力欄が表示されるまで待機（UIアニメーションや遷移のため少し長めに待つ）
+            await sleep(3000);
+            passInput = await page.$('input[name="password"]') || await page.$('input[type="password"]') || await page.$('#password');
+        }
+
+        if (passInput) {
+            await passInput.fill(capcomPassword);
+            console.log("[DEBUG] パスワード入力完了。");
+        } else {
+            console.log("[WARNING] パスワード入力欄が見つからないまま進みます。すでにSSO等でログイン判定されているかもしれません。");
+        }
+
+        // 送信 (ログインボタン)
+        console.log("Step 5: ログインボタンをクリック...");
+        const submitSelectors = ['button[type="submit"]', 'input[type="submit"]', 'button[name="action"]'];
+        let submitted = false;
+        for (const sel of submitSelectors) {
             try {
-                const input = await page.$(sel);
-                if (input) {
-                    await input.fill(capcomPassword);
+                const btn = await page.$(sel);
+                if (btn) {
+                    await btn.click();
+                    submitted = true;
                     break;
                 }
             } catch (e) { continue; }
         }
-
-        // 送信
-        console.log("Step 5: ログインボタンをクリック...");
-        const submitSelectors = ['button[type="submit"]', 'input[type="submit"]'];
-        for (const sel of submitSelectors) {
-            try {
-                const btn = await page.$(sel);
-                if (btn) { await btn.click(); break; }
-            } catch (e) { continue; }
+        if (!submitted && passInput) {
+            // エンターキーで送信を試みる
+            await passInput.press('Enter');
         }
 
         // ログイン後の遷移待ち
@@ -845,7 +875,7 @@ async function fetchOpponentsForBattles(page, battles, mySid, opponentsMap, coll
     }
     console.log(`    新規対戦相手: ${uniqueOpponents.length}人`);
 
-    // 直近 acts の算出 (最新Act=Act11 は除外して、その前の3つを取得)
+    // 直近 acts の算出 (最新Act=Act12 は除外して、その前の3つを取得)
     const targetActs = ACT_RANGE.slice(0, -1).slice(-RECENT_ACTS_COUNT);
 
     // 1人分のデータ取得関数

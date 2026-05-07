@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS players (
 CREATE TABLE IF NOT EXISTS act_history (
   id              BIGSERIAL PRIMARY KEY,
   short_id        TEXT NOT NULL REFERENCES players(short_id) ON DELETE CASCADE,
-  act_id          INTEGER NOT NULL,          -- 0~11, -1 = current
+  act_id          INTEGER NOT NULL,          -- 0~12, -1 = current
   is_current      BOOLEAN NOT NULL DEFAULT false,
   character_name  TEXT NOT NULL,
   lp              INTEGER DEFAULT -1,
@@ -83,7 +83,6 @@ CREATE INDEX IF NOT EXISTS idx_subscriptions_sid ON subscriptions(short_id);
 
 -- テスト用初期データ
 INSERT INTO subscriptions (device_id, short_id, device_type) VALUES
-  ('test-device-001', '2310599217', 'manual'),
   ('test-device-002', '4196667808', 'manual')
 ON CONFLICT (device_id) DO NOTHING;
 
@@ -103,7 +102,7 @@ CREATE TABLE IF NOT EXISTS enemy_players (
 CREATE TABLE IF NOT EXISTS enemy_act_history (
   id              BIGSERIAL PRIMARY KEY,
   short_id        TEXT NOT NULL REFERENCES enemy_players(short_id) ON DELETE CASCADE,
-  act_id          INTEGER NOT NULL,          -- 0~11
+  act_id          INTEGER NOT NULL,          -- 0~12
   is_current      BOOLEAN NOT NULL DEFAULT false, -- 基本的に false (過去ログ取得が主目的だが、構造は合わせる)
   character_name  TEXT NOT NULL,
   lp              INTEGER DEFAULT -1,
